@@ -1,0 +1,111 @@
+# ═══════════════════════════════════════════════════════════════
+# Lavalink Server v4 — application.yml
+# Plugins: lavasrc (Spotify ISRC) + youtube (OAuth)
+# ═══════════════════════════════════════════════════════════════
+
+server:
+  port: 2333
+  address: 0.0.0.0
+
+lavalink:
+  server:
+    password: "${LAVALINK_SERVER_PASSWORD}"
+    sources:
+      youtube: false       # Deshabilitado: se usa youtube-plugin
+      bandcamp: true
+      soundcloud: true
+      twitch: true
+      vimeo: false
+      http: true           # Permite URLs directas de audio
+      local: false
+    filters:
+      volume: true
+      equalizer: true
+      karaoke: true
+      timescale: true
+      tremolo: true
+      vibrato: true
+      distortion: true
+      rotation: true
+      channelMix: true
+      lowPass: true
+    bufferDurationMs: 400
+    frameBufferDurationMs: 5000
+    youtubePlaylistLoadLimit: 100
+    playerUpdateInterval: 5
+    youtubeSearchEnabled: true
+    soundcloudSearchEnabled: true
+    gc-warnings: true
+
+  # ── Descarga automática de plugins ──
+  # Lavalink descargará los JARs al directorio /plugins en el primer arranque.
+  # NOTA: Verificar versiones más recientes en:
+  #   - https://github.com/topi314/LavaSrc/releases
+  #   - https://github.com/lavalink-devs/youtube-source/releases
+  plugins:
+    - dependency: "com.github.topi314.lavasrc:lavasrc-plugin:4.3.0"
+      repository: "https://maven.lavalink.dev/releases"
+    - dependency: "dev.lavalink.youtube:youtube-plugin:1.11.5"
+      repository: "https://maven.lavalink.dev/releases"
+
+# ═══════════════════════════════════════════════════════════════
+# Configuración de Plugins
+# ═══════════════════════════════════════════════════════════════
+
+plugins:
+  # ── lavasrc: Resolución Spotify → YouTube vía ISRC ──
+  lavasrc:
+    providers:
+      # Cadena de resolución ordenada por prioridad:
+      # 1. Buscar por código ISRC en YouTube (match exacto)
+      - "ytsearch:\"%ISRC%\""
+      # 2. Fallback: buscar por texto (título + artista)
+      - "ytsearch:%QUERY%"
+    sources:
+      spotify: true
+      deezer: false
+      applemusic: false
+      yandexmusic: false
+      flowerytts: false
+      youtube: true
+    spotify:
+      clientId: "${SPOTIFY_CLIENT_ID}"
+      clientSecret: "${SPOTIFY_CLIENT_SECRET}"
+      countryCode: "CL"
+      playlistLoadLimit: 6    # 6 páginas × 100 = máx 600 tracks
+      albumLoadLimit: 6
+
+  # ── youtube: Sesiones seguras con OAuth ──
+  youtube:
+    enabled: true
+    allowSearch: true
+    allowDirectVideoIds: true
+    allowDirectPlaylistIds: true
+    clients:
+      - "MUSIC"                # YouTube Music (prioridad para audio musical)
+      - "WEB"                  # Fallback: cliente web estándar
+      - "ANDROID_TESTSUITE"    # Fallback adicional
+    # ── Autenticación OAuth ──
+    # Al primer arranque, Lavalink imprimirá un enlace OAuth en los logs.
+    # Sigue las instrucciones para autorizar con una cuenta de Google.
+    # El token se persiste automáticamente y se renueva.
+    oauth:
+      enabled: true
+
+# ═══════════════════════════════════════════════════════════════
+# Logging
+# ═══════════════════════════════════════════════════════════════
+
+logging:
+  file:
+    path: ./logs/
+
+  level:
+    root: INFO
+    lavalink: INFO
+    com.sedmelluq.discord.lavaplayer: WARN
+
+  logback:
+    rollingpolicy:
+      max-file-size: 25MB
+      max-history: 7

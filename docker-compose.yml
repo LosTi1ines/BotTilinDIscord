@@ -1,0 +1,90 @@
+# ═══════════════════════════════════════════════════════════════
+# Docker Compose — Discord Music Bot Stack
+# Plano de Control (Bot) + Plano de Datos (Lavalink)
+# ═══════════════════════════════════════════════════════════════
+version: "3.9"
+
+services:
+  # ──────────────────────────────────────────────────────────────
+  # Plano de Control: Discord Bot (Node.js + TypeScript + Shoukaku)
+  # ──────────────────────────────────────────────────────────────
+  bot:
+    build:
+      context: ./bot
+      dockerfile: Dockerfile
+    container_name: discord-music-bot
+    restart: always
+    depends_on:
+      lavalink:
+        condition: service_healthy
+    env_file:
+      - .env
+    environment:
+      # Override para resolución DNS interna de Docker
+      - LAVALINK_HOST=lavalink
+      - LAVALINK_PORT=2333
+    networks:
+      - music-net
+    volumes:
+      - bot-logs:/app/logs
+    deploy:
+      resources:
+        limits:
+          memory: 512M
+          cpus: "1.0"
+        reservations:
+          memory: 256M
+          cpus: "0.25"
+
+  # ──────────────────────────────────────────────────────────────
+  # Plano de Datos: Lavalink Server (Java) + Plugins
+  # ──────────────────────────────────────────────────────────────
+  lavalink:
+    image: ghcr.io/lavalink-devs/lavalink:4
+    container_name: lavalink-server
+    restart: always
+    environment:
+      - _JAVA_OPTIONS=-Xmx512M -Xms128M
+      - SERVER_PORT=2333
+      - LAVALINK_SERVER_PASSWORD=${LAVALINK_PASSWORD}
+      # Credenciales Spotify pasadas al plugin lavasrc
+      - SPOTIFY_CLIENT_ID=${SPOTIFY_CLIENT_ID}
+      - SPOTIFY_CLIENT_SECRET=${SPOTIFY_CLIENT_SECRET}
+    volumes:
+      - ./lavalink/application.yml:/opt/Lavalink/application.yml:ro
+      - lavalink-logs:/opt/Lavalink/logs
+      - lavalink-plugins:/opt/Lavalink/plugins
+    networks:
+      - music-net
+    # Solo expone el puerto dentro de la red Docker (no al host)
+    expose:
+      - "2333"
+    deploy:
+      resources:
+        limits:
+          memory: 768M
+          cpus: "2.0"
+        reservations:
+          memory: 256M
+          cpus: "0.5"
+    healthcheck:
+      test: ["CMD-SHELL", "curl -sf http://localhost:2333/version || exit 1"]
+      interval: 15s
+      timeout: 5s
+      retries: 5
+      start_period: 30s
+
+# ── Red Aislada ──
+networks:
+  music-net:
+    driver: bridge
+    name: music-bot-network
+
+# ── Volúmenes Persistentes ──
+volumes:
+  bot-logs:
+    name: discord-bot-logs
+  lavalink-logs:
+    name: lavalink-server-logs
+  lavalink-plugins:
+    name: lavalink-plugins
