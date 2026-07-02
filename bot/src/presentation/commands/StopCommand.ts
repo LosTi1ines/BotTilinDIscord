@@ -2,6 +2,7 @@ import { SlashCommandBuilder } from 'discord.js';
 import type { ChatInputCommandInteraction } from 'discord.js';
 import type { BotContext } from './index.js';
 import { buildSuccessEmbed, buildErrorEmbed } from '../embeds/MusicEmbeds.js';
+import { checkVoiceChannel } from '../middleware/VoiceChannelGuard.js';
 
 export const data = new SlashCommandBuilder()
   .setName('stop')
@@ -13,12 +14,13 @@ export async function execute(
 ): Promise<void> {
   await interaction.deferReply();
 
-  if (!interaction.guildId) {
-    await interaction.editReply({ embeds: [buildErrorEmbed('Solo disponible en servidores.')] });
+  const guard = checkVoiceChannel(interaction);
+  if (!guard.ok) {
+    await interaction.editReply({ embeds: [buildErrorEmbed(guard.message)] });
     return;
   }
 
-  const result = await ctx.stop.execute(interaction.guildId);
+  const result = await ctx.stop.execute(guard.guildId);
 
   const embed = result.type === 'error'
     ? buildErrorEmbed(result.message)

@@ -1,3 +1,4 @@
+import { createServer } from 'node:http';
 import { Client, GatewayIntentBits, Events } from 'discord.js';
 import { Shoukaku, Connectors, type NodeOption } from 'shoukaku';
 import { getConfig } from './config/index.js';
@@ -108,6 +109,13 @@ async function bootstrap(): Promise<void> {
 
   // ── Login ────────────────────────────────────────────────────
   await client.login(config.discord.token);
+
+  // ── Health Check Server (para Docker) ─────────────────────
+  const healthServer = createServer((_, res) => {
+    res.writeHead(200, { 'Content-Type': 'text/plain' });
+    res.end('OK');
+  });
+  healthServer.listen(3000, () => logger.debug('Health server listening', { port: 3000 }));
 }
 
 bootstrap().catch((err: unknown) => {
