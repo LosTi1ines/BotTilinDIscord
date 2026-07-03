@@ -1,143 +1,62 @@
-# 🪟 Guía de Shell — Windows PowerShell
+# 💻 Guía de Equivalencia de Consola — Bash vs. PowerShell
 
-> Este proyecto se desarrolla en **Windows con PowerShell**.  
-> Consultar esta guía antes de ejecutar cualquier comando de terminal.
-
----
-
-## ¿Por qué existe esta guía?
-
-La mayoría del ecosistema Node.js/Docker asume entornos Linux/macOS.  
-Los agentes IA y documentación online usan sintaxis Bash por defecto.  
-En Windows con PowerShell, muchos de esos comandos **simplemente no existen o fallan silenciosamente**.
+> **Propósito:** Facilitar la traducción de comandos entre entornos **Linux/macOS (Bash/Zsh)** y **Windows (PowerShell)** para todos los desarrolladores y agentes IA que trabajen en este proyecto.
 
 ---
 
-## Equivalencias rápidas: Bash → PowerShell
+## 1. Tabla de Equivalencias Rápidas
 
-| Operación | Bash ❌ | PowerShell ✅ |
-|-----------|--------|--------------|
-| Encadenar comandos (AND) | `cmd1 && cmd2` | `cmd1; cmd2` *(o dos líneas separadas)* |
-| Redirigir stderr | `cmd 2>&1` | `cmd 2>&1` *(no combinar con `&&`)* |
-| Buscar texto en archivo | `grep -n "texto" archivo` | `Select-String -Path archivo -Pattern "texto"` |
-| Buscar en carpetas | `grep -r "texto" src/` | `Select-String -Path "src/**" -Pattern "texto" -Recurse` |
-| Primeras N líneas | `head -n 20 archivo` | `Get-Content archivo \| Select-Object -First 20` |
-| Últimas N líneas | `tail -n 20 archivo` | `Get-Content archivo \| Select-Object -Last 20` |
-| Ver contenido | `cat archivo.txt` | `Get-Content archivo.txt` |
-| Listar archivos recursivo | `find . -name "*.ts"` | `Get-ChildItem -Recurse -Filter "*.ts"` |
-| Copiar archivo | `cp origen destino` | `Copy-Item origen destino` |
-| Mover/Renombrar | `mv origen destino` | `Move-Item origen destino` |
-| Eliminar archivo | `rm archivo` | `Remove-Item archivo` |
-| Crear directorio | `mkdir -p dir/sub` | `New-Item -ItemType Directory -Force -Path dir/sub` |
-| Variable de entorno (set) | `export VAR=valor` | `$env:VAR = "valor"` |
-| Variable de entorno (read) | `echo $VAR` | `$env:VAR` |
-| Verificar si comando existe | `which pnpm` | `Get-Command pnpm -ErrorAction SilentlyContinue` |
-
----
-
-## El problema del `&&`
-
-PowerShell 5 (que viene por defecto en Windows 10/11) **no soporta `&&`**.  
-PowerShell 7+ sí lo soporta, pero **nunca se debe asumir** que está disponible.
-
-```powershell
-# ❌ Falla en PS5
-git add . && git commit -m "mensaje"
-
-# ✅ Siempre funciona
-git add .
-git commit -m "mensaje"
-
-# ✅ También funciona (punto y coma)
-git add .; git commit -m "mensaje"
-```
+| Operación | Unix (Bash/Zsh) 🐧🍏 | Windows (PowerShell) 🪟 |
+|-----------|--------------------|-----------------------|
+| **Encadenar comandos (AND)** | `cmd1 && cmd2` | `cmd1; cmd2` *(o líneas separadas)* |
+| **Redirigir stderr a stdout** | `cmd 2>&1` | `cmd 2>&1` *(evitar con `;`)* |
+| **Buscar texto en archivo** | `grep "texto" archivo` | `Select-String -Path archivo -Pattern "texto"` |
+| **Buscar texto recursivamente** | `grep -r "texto" src/` | `Select-String -Path "src/**" -Pattern "texto" -Recurse` |
+| **Ver primeras N líneas** | `head -n 20 archivo` | `Get-Content archivo \| Select-Object -First 20` |
+| **Ver últimas N líneas** | `tail -n 20 archivo` | `Get-Content archivo \| Select-Object -Last 20` |
+| **Ver contenido de archivo** | `cat archivo.txt` | `Get-Content archivo.txt` |
+| **Listar archivos recursivo** | `find . -name "*.ts"` | `Get-ChildItem -Recurse -Filter "*.ts"` |
+| **Copiar archivo** | `cp origen destino` | `Copy-Item origen destino` |
+| **Mover/Renombrar archivo** | `mv origen destino` | `Move-Item origen destino` |
+| **Eliminar archivo** | `rm archivo` | `Remove-Item archivo` |
+| **Crear directorio** | `mkdir -p dir/sub` | `New-Item -ItemType Directory -Force -Path dir/sub` |
+| **Definir Variable de Entorno** | `export VAR=valor` | `$env:VAR = "valor"` |
+| **Leer Variable de Entorno** | `echo $VAR` | `$env:VAR` |
+| **Verificar si comando existe** | `which pnpm` | `Get-Command pnpm -ErrorAction SilentlyContinue` |
 
 ---
 
-## El problema de `pnpm` en el sandbox
+## 2. El problema del operador `&&` en Windows
 
-Cuando un agente IA ejecuta comandos en modo sandbox, el PATH del sistema está restringido.  
-`pnpm` instalado globalmente (via Corepack o instalador) **no es visible** en ese entorno.
+En sistemas Windows con PowerShell 5.x (el predeterminado en muchas instalaciones), el operador `&&` no es un separador válido y causará un error de sintaxis en el parser.
 
-**Solución:** Siempre usar `BypassSandbox: true` para comandos de package managers.
-
-### Requieren BypassSandbox ✅
-
-```powershell
-pnpm install
-pnpm run typecheck
-pnpm run build
-npm run dev
-git push origin rama
-git pull
-docker restart contenedor
-docker logs contenedor
-docker-compose up
-```
-
-### No requieren BypassSandbox ✅
-
-```powershell
-git add .
-git commit -m "..."
-git checkout -b rama
-git status
-git log -n 10
-Get-Content archivo.ts
-Select-String -Path "src/**" -Pattern "texto"
-```
+**Solución cross-platform:**
+- Si escribes comandos para que los ejecute un agente o un script, **escribe líneas separadas** en lugar de encadenar con `&&`.
+- En PowerShell, usa `;` para separar instrucciones en una misma línea.
 
 ---
 
-## Comandos útiles para este proyecto
+## 3. Compatibilidad con el Sandbox de Agentes IA
 
-```powershell
-# ── Verificar TypeScript ──────────────────────────────────────
-pnpm run typecheck
-# (requiere BypassSandbox)
+Cuando utilices herramientas como `run_command` en el Host:
+- Los package managers (`pnpm`, `npm`, `npx`) y Docker (`docker`, `docker-compose`) a menudo requieren `BypassSandbox: true` porque el sandbox no hereda el PATH global del sistema ni el acceso a red local/externa.
+- Los comandos locales simples de Git (`git status`, `git add`, `git diff`) funcionan perfectamente con `BypassSandbox: false`.
 
-# ── Inspeccionar tipos de una librería ───────────────────────
-Get-Content "node_modules\shoukaku\dist\index.d.ts" | Select-Object -First 100
-Select-String -Path "node_modules\shoukaku\dist\index.d.ts" -Pattern "channelId"
+---
 
-# ── Buscar en el código fuente ────────────────────────────────
-Select-String -Path "bot\src\**\*.ts" -Pattern "hasPlayer" -Recurse
+## 4. Comandos de Docker Cross-Platform
 
-# ── Git workflow ──────────────────────────────────────────────
-git status
-git add .
-git commit -m "feat: descripcion del cambio"
-git push origin rankine
-# (el push requiere BypassSandbox)
+Los comandos de Docker interactúan con el daemon de Docker y son idénticos en ambos sistemas operativos:
 
-# ── Docker ────────────────────────────────────────────────────
-docker logs discord-music-bot --tail 40
-docker logs lavalink-server --tail 40
+```bash
+# Ver logs del bot
+docker logs discord-music-bot --tail 50
+
+# Ver logs de Lavalink
+docker logs lavalink-server --tail 50
+
+# Reiniciar el contenedor del bot
 docker restart discord-music-bot
-# (todos requieren BypassSandbox)
 ```
-
----
-
-## Checklist antes de ejecutar cualquier comando
-
-```
-[ ] ¿El comando usa &&?
-    → Separar en dos comandos o reemplazar por ;
-
-[ ] ¿Usa grep, head, tail, cat, find, sed, awk?
-    → Traducir al equivalente de PowerShell
-
-[ ] ¿Involucra pnpm, npm, npx, git push/pull, docker?
-    → Usar BypassSandbox: true
-
-[ ] ¿Usa rutas con / como separador en el host?
-    → En PowerShell también funciona /, pero \ es más seguro para paths locales
-
-[ ] ¿Combina 2>&1 con &&?
-    → Separar el comando y quitar el &&
-```
-
----
 
 *Última actualización: 2026-07-02 — Rama `rankine`*
