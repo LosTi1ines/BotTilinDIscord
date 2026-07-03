@@ -42,6 +42,7 @@ services:
   lavalink:
     image: ghcr.io/lavalink-devs/lavalink:4
     container_name: lavalink-server
+    user: root
     restart: always
     environment:
       - _JAVA_OPTIONS=-Xmx512M -Xms128M
@@ -50,6 +51,9 @@ services:
       # Credenciales Spotify pasadas al plugin lavasrc
       - SPOTIFY_CLIENT_ID=${SPOTIFY_CLIENT_ID}
       - SPOTIFY_CLIENT_SECRET=${SPOTIFY_CLIENT_SECRET}
+      # Credenciales opcionales para automatización de YouTube OAuth
+      - YOUTUBE_OAUTH_REFRESH_TOKEN=${YOUTUBE_OAUTH_REFRESH_TOKEN}
+      - YOUTUBE_OAUTH_SKIP_INITIALIZATION=${YOUTUBE_OAUTH_SKIP_INITIALIZATION}
     volumes:
       - ./lavalink/application.yml:/opt/Lavalink/application.yml:ro
       - lavalink-logs:/opt/Lavalink/logs
@@ -68,11 +72,11 @@ services:
           memory: 256M
           cpus: "0.5"
     healthcheck:
-      test: ["CMD-SHELL", "curl -sf http://localhost:2333/version || exit 1"]
-      interval: 15s
+      test: ["CMD-SHELL", "curl -sf -H \"Authorization: ${LAVALINK_PASSWORD}\" http://localhost:2333/version || exit 1"]
+      interval: 10s
       timeout: 5s
       retries: 5
-      start_period: 30s
+      start_period: 15s
 
 # ── Red Aislada ──
 networks:
