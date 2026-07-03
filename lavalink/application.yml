@@ -71,6 +71,7 @@ plugins:
     spotify:
       clientId: "${SPOTIFY_CLIENT_ID}"
       clientSecret: "${SPOTIFY_CLIENT_SECRET}"
+      spDc: "${SPOTIFY_SP_DC:}"  # Cookie de cuenta de Spotify para playlists del sistema/letras
       countryCode: "CL"
       playlistLoadLimit: 6    # 6 páginas × 100 = máx 600 tracks
       albumLoadLimit: 6

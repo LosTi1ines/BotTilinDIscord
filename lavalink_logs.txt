@@ -173,11 +173,11 @@ java.io.IOException: UT002002: Channel is closed
 	at io.undertow.websockets.jsr.UndertowSession.close(UndertowSession.java:195) ~[undertow-websockets-jsr-2.3.13.Final.jar!/:2.3.13.Final]
 	at org.springframework.web.socket.adapter.standard.StandardWebSocketSession.closeInternal(StandardWebSocketSession.java:237) ~[spring-websocket-6.1.9.jar!/:6.1.9]
 	at org.springframework.web.socket.adapter.AbstractWebSocketSession.close(AbstractWebSocketSession.java:144) ~[spring-websocket-6.1.9.jar!/:6.1.9]
+Picked up _JAVA_OPTIONS: -Xmx512M -Xms128M
 	at lavalink.server.io.SocketContext.closeWebSocket(SocketContext.kt:208) ~[classes!/:4.2.2]
 	at lavalink.server.io.SocketContext.closeWebSocket(SocketContext.kt:212) ~[classes!/:4.2.2]
 	at lavalink.server.io.ShutdownHandler.run(ShutdownHandler.kt:13) ~[classes!/:4.2.2]
 
-Picked up _JAVA_OPTIONS: -Xmx512M -Xms128M
 2026-07-02T02:47:06.905Z  INFO 1 --- [Lavalink] [           main] lavalink.server.Launcher                 : Starting Launcher v4.2.2 using Java 18.0.2.1 with PID 1 (/opt/Lavalink/Lavalink.jar started by root in /opt/Lavalink)
 2026-07-02T02:47:06.907Z  INFO 1 --- [Lavalink] [           main] lavalink.server.Launcher                 : No active profile set, falling back to 1 default profile: "default"
 2026-07-02T02:47:07.465Z  INFO 1 --- [Lavalink] [           main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=3d6bf653-92ea-3fde-943a-10b9f8cd696e
@@ -366,7 +366,6 @@ Picked up _JAVA_OPTIONS: -Xmx512M -Xms128M
 2026-07-02T03:05:09.743Z  INFO 1 --- [Lavalink] [  XNIO-1 task-2] l.server.io.RequestLoggingFilter         : GET /version
 2026-07-02T03:05:11.614Z  INFO 1 --- [Lavalink] [  XNIO-1 task-2] l.server.io.RequestLoggingFilter         : DELETE /v4/sessions/gvdbeswoasa2s758/players/397085993901096970
 2026-07-02T03:05:19.775Z  INFO 1 --- [Lavalink] [  XNIO-1 task-2] l.server.io.RequestLoggingFilter         : GET /version
-Picked up _JAVA_OPTIONS: -Xmx512M -Xms128M
 2026-07-02T03:05:29.809Z  INFO 1 --- [Lavalink] [  XNIO-1 task-2] l.server.io.RequestLoggingFilter         : GET /version
 2026-07-02T03:05:39.839Z  INFO 1 --- [Lavalink] [  XNIO-1 task-2] l.server.io.RequestLoggingFilter         : GET /version
 2026-07-02T03:05:49.872Z  INFO 1 --- [Lavalink] [  XNIO-1 task-2] l.server.io.RequestLoggingFilter         : GET /version
@@ -394,6 +393,7 @@ Picked up _JAVA_OPTIONS: -Xmx512M -Xms128M
 2026-07-02T03:09:01.058Z  INFO 1 --- [Lavalink] [ionShutdownHook] io.undertow                              : stopping server: Undertow - 2.3.13.Final
 2026-07-02T03:09:01.063Z  INFO 1 --- [Lavalink] [ionShutdownHook] io.undertow.servlet                      : Destroying Spring FrameworkServlet 'dispatcherServlet'
 2026-07-02T17:41:22.829Z  INFO 1 --- [Lavalink] [           main] lavalink.server.Launcher                 : Starting Launcher v4.2.2 using Java 18.0.2.1 with PID 1 (/opt/Lavalink/Lavalink.jar started by root in /opt/Lavalink)
+Picked up _JAVA_OPTIONS: -Xmx512M -Xms128M
 2026-07-02T17:41:22.832Z  INFO 1 --- [Lavalink] [           main] lavalink.server.Launcher                 : No active profile set, falling back to 1 default profile: "default"
 2026-07-02T17:41:23.382Z  INFO 1 --- [Lavalink] [           main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=3d6bf653-92ea-3fde-943a-10b9f8cd696e
 2026-07-02T17:41:23.691Z  INFO 1 --- [Lavalink] [           main] l.server.bootstrap.PluginManager         : Found plugin 'youtube-plugin' version '1.18.1'
@@ -442,7 +442,6 @@ Picked up _JAVA_OPTIONS: -Xmx512M -Xms128M
 2026-07-02T17:41:31.812Z  INFO 1 --- [Lavalink] [  XNIO-1 task-2] io.undertow.servlet                      : Initializing Spring DispatcherServlet 'dispatcherServlet'
 2026-07-02T17:41:31.812Z  INFO 1 --- [Lavalink] [  XNIO-1 task-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
 2026-07-02T17:41:31.813Z  INFO 1 --- [Lavalink] [  XNIO-1 task-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
-Picked up _JAVA_OPTIONS: -Xmx512M -Xms128M
 2026-07-02T17:41:31.858Z  INFO 1 --- [Lavalink] [  XNIO-1 task-2] l.server.io.RequestLoggingFilter         : GET /version
 2026-07-02T17:41:41.890Z  INFO 1 --- [Lavalink] [  XNIO-1 task-2] l.server.io.RequestLoggingFilter         : GET /version
 2026-07-02T17:41:51.920Z  INFO 1 --- [Lavalink] [  XNIO-1 task-2] l.server.io.RequestLoggingFilter         : GET /version
@@ -454,6 +453,7 @@ Picked up _JAVA_OPTIONS: -Xmx512M -Xms128M
 2026-07-02T17:42:52.106Z  INFO 1 --- [Lavalink] [  XNIO-1 task-2] l.server.io.RequestLoggingFilter         : GET /version
 2026-07-02T17:43:02.138Z  INFO 1 --- [Lavalink] [  XNIO-1 task-2] l.server.io.RequestLoggingFilter         : GET /version
 2026-07-02T17:43:05.806Z  INFO 1 --- [Lavalink] [ionShutdownHook] io.undertow                              : stopping server: Undertow - 2.3.13.Final
+Picked up _JAVA_OPTIONS: -Xmx512M -Xms128M
 2026-07-02T17:43:05.808Z  INFO 1 --- [Lavalink] [ionShutdownHook] io.undertow.servlet                      : Destroying Spring FrameworkServlet 'dispatcherServlet'
 2026-07-03T01:26:15.674Z  INFO 1 --- [Lavalink] [           main] lavalink.server.Launcher                 : Starting Launcher v4.2.2 using Java 18.0.2.1 with PID 1 (/opt/Lavalink/Lavalink.jar started by root in /opt/Lavalink)
 2026-07-03T01:26:15.679Z  INFO 1 --- [Lavalink] [           main] lavalink.server.Launcher                 : No active profile set, falling back to 1 default profile: "default"
@@ -2431,7 +2431,6 @@ com.sedmelluq.discord.lavaplayer.tools.FriendlyException: Something went wrong w
 Caused by: com.sedmelluq.discord.lavaplayer.tools.FriendlyException: Server responded with an error.
 	at com.github.topi314.lavasrc.LavaSrcTools.fetchResponseAsJson(LavaSrcTools.java:39) ~[lavasrc-plugin-4.8.3.jar!/:na]
 	at com.github.topi314.lavasrc.spotify.SpotifySourceManager.getJson(SpotifySourceManager.java:306) ~[lavasrc-plugin-4.8.3.jar!/:na]
-Picked up _JAVA_OPTIONS: -Xmx512M -Xms128M
 	at com.github.topi314.lavasrc.spotify.SpotifySourceManager.getSearch(SpotifySourceManager.java:388) ~[lavasrc-plugin-4.8.3.jar!/:na]
 	at com.github.topi314.lavasrc.spotify.SpotifySourceManager.loadItem(SpotifySourceManager.java:256) ~[lavasrc-plugin-4.8.3.jar!/:na]
 	at com.github.topi314.lavasrc.spotify.SpotifySourceManager.loadItem(SpotifySourceManager.java:250) ~[lavasrc-plugin-4.8.3.jar!/:na]
@@ -2461,6 +2460,7 @@ Caused by: java.lang.IllegalStateException: Response code from channel info is 4
 2026-07-03T01:48:14.413Z  INFO 1 --- [Lavalink] [hutdown-handler] lavalink.server.io.SocketContext         : Shutting down 0 playing players.
 2026-07-03T01:48:14.416Z  INFO 1 --- [Lavalink] [ionShutdownHook] io.undertow                              : stopping server: Undertow - 2.3.13.Final
 2026-07-03T01:48:14.419Z  INFO 1 --- [Lavalink] [ionShutdownHook] io.undertow.servlet                      : Destroying Spring FrameworkServlet 'dispatcherServlet'
+Picked up _JAVA_OPTIONS: -Xmx512M -Xms128M
 2026-07-03T01:49:45.217Z  INFO 1 --- [Lavalink] [           main] lavalink.server.Launcher                 : Starting Launcher v4.2.2 using Java 18.0.2.1 with PID 1 (/opt/Lavalink/Lavalink.jar started by root in /opt/Lavalink)
 2026-07-03T01:49:45.219Z  INFO 1 --- [Lavalink] [           main] lavalink.server.Launcher                 : No active profile set, falling back to 1 default profile: "default"
 2026-07-03T01:49:45.798Z  INFO 1 --- [Lavalink] [           main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=3d6bf653-92ea-3fde-943a-10b9f8cd696e
@@ -2532,3 +2532,469 @@ Caused by: java.lang.IllegalStateException: Response code from channel info is 4
 2026-07-03T01:53:04.773Z  INFO 1 --- [Lavalink] [  XNIO-1 task-2] l.server.io.RequestLoggingFilter         : GET /version
 2026-07-03T01:53:14.809Z  INFO 1 --- [Lavalink] [  XNIO-1 task-2] l.server.io.RequestLoggingFilter         : GET /version
 2026-07-03T01:53:24.842Z  INFO 1 --- [Lavalink] [  XNIO-1 task-2] l.server.io.RequestLoggingFilter         : GET /version
+2026-07-03T01:53:34.873Z  INFO 1 --- [Lavalink] [  XNIO-1 task-2] l.server.io.RequestLoggingFilter         : GET /version
+2026-07-03T01:53:44.904Z  INFO 1 --- [Lavalink] [  XNIO-1 task-2] l.server.io.RequestLoggingFilter         : GET /version
+2026-07-03T01:53:54.936Z  INFO 1 --- [Lavalink] [  XNIO-1 task-2] l.server.io.RequestLoggingFilter         : GET /version
+2026-07-03T01:54:04.969Z  INFO 1 --- [Lavalink] [  XNIO-1 task-2] l.server.io.RequestLoggingFilter         : GET /version
+2026-07-03T01:54:15.000Z  INFO 1 --- [Lavalink] [  XNIO-1 task-2] l.server.io.RequestLoggingFilter         : GET /version
+2026-07-03T01:54:25.030Z  INFO 1 --- [Lavalink] [  XNIO-1 task-2] l.server.io.RequestLoggingFilter         : GET /version
+2026-07-03T01:54:35.062Z  INFO 1 --- [Lavalink] [  XNIO-1 task-2] l.server.io.RequestLoggingFilter         : GET /version
+2026-07-03T01:54:45.092Z  INFO 1 --- [Lavalink] [  XNIO-1 task-2] l.server.io.RequestLoggingFilter         : GET /version
+2026-07-03T01:54:55.124Z  INFO 1 --- [Lavalink] [  XNIO-1 task-2] l.server.io.RequestLoggingFilter         : GET /version
+2026-07-03T01:55:05.157Z  INFO 1 --- [Lavalink] [  XNIO-1 task-2] l.server.io.RequestLoggingFilter         : GET /version
+2026-07-03T01:55:15.188Z  INFO 1 --- [Lavalink] [  XNIO-1 task-2] l.server.io.RequestLoggingFilter         : GET /version
+2026-07-03T01:55:25.220Z  INFO 1 --- [Lavalink] [  XNIO-1 task-2] l.server.io.RequestLoggingFilter         : GET /version
+2026-07-03T01:55:30.540Z  INFO 1 --- [Lavalink] [  XNIO-1 task-2] l.server.io.HandshakeInterceptorImpl     : Incoming connection from /172.18.0.2:46994
+2026-07-03T01:55:30.554Z  INFO 1 --- [Lavalink] [  XNIO-1 task-2] l.server.io.RequestLoggingFilter         : GET /v4/websocket
+2026-07-03T01:55:30.576Z  INFO 1 --- [Lavalink] [  XNIO-1 task-2] c.s.l.c.natives.NativeLibraryLoader      : Native library dave-jvm: loading with filter null
+2026-07-03T01:55:30.592Z  INFO 1 --- [Lavalink] [  XNIO-1 task-2] c.s.l.c.natives.NativeLibraryLoader      : Native library dave-jvm: successfully loaded.
+2026-07-03T01:55:30.612Z  INFO 1 --- [Lavalink] [  XNIO-1 task-2] lavalink.server.io.SocketServer          : Connection successfully established from shoukaku/4.3.0 (https://github.com/shipgirlproject/Shoukaku.git)
+2026-07-03T01:55:35.252Z  INFO 1 --- [Lavalink] [  XNIO-1 task-2] l.server.io.RequestLoggingFilter         : GET /version
+2026-07-03T01:55:45.283Z  INFO 1 --- [Lavalink] [  XNIO-1 task-2] l.server.io.RequestLoggingFilter         : GET /version
+2026-07-03T01:55:55.315Z  INFO 1 --- [Lavalink] [  XNIO-1 task-2] l.server.io.RequestLoggingFilter         : GET /version
+2026-07-03T01:56:05.346Z  INFO 1 --- [Lavalink] [  XNIO-1 task-2] l.server.io.RequestLoggingFilter         : GET /version
+2026-07-03T01:56:15.376Z  INFO 1 --- [Lavalink] [  XNIO-1 task-2] l.server.io.RequestLoggingFilter         : GET /version
+2026-07-03T01:56:25.406Z  INFO 1 --- [Lavalink] [  XNIO-1 task-2] l.server.io.RequestLoggingFilter         : GET /version
+2026-07-03T01:56:35.438Z  INFO 1 --- [Lavalink] [  XNIO-1 task-2] l.server.io.RequestLoggingFilter         : GET /version
+2026-07-03T01:56:45.468Z  INFO 1 --- [Lavalink] [  XNIO-1 task-2] l.server.io.RequestLoggingFilter         : GET /version
+2026-07-03T01:56:55.500Z  INFO 1 --- [Lavalink] [  XNIO-1 task-2] l.server.io.RequestLoggingFilter         : GET /version
+2026-07-03T01:57:05.533Z  INFO 1 --- [Lavalink] [  XNIO-1 task-2] l.server.io.RequestLoggingFilter         : GET /version
+2026-07-03T01:57:15.567Z  INFO 1 --- [Lavalink] [  XNIO-1 task-2] l.server.io.RequestLoggingFilter         : GET /version
+2026-07-03T01:57:25.600Z  INFO 1 --- [Lavalink] [  XNIO-1 task-2] l.server.io.RequestLoggingFilter         : GET /version
+2026-07-03T01:57:35.632Z  INFO 1 --- [Lavalink] [  XNIO-1 task-2] l.server.io.RequestLoggingFilter         : GET /version
+2026-07-03T01:57:45.661Z  INFO 1 --- [Lavalink] [  XNIO-1 task-2] l.server.io.RequestLoggingFilter         : GET /version
+2026-07-03T01:57:55.699Z  INFO 1 --- [Lavalink] [  XNIO-1 task-2] l.server.io.RequestLoggingFilter         : GET /version
+2026-07-03T01:58:05.734Z  INFO 1 --- [Lavalink] [  XNIO-1 task-2] l.server.io.RequestLoggingFilter         : GET /version
+2026-07-03T01:58:15.768Z  INFO 1 --- [Lavalink] [  XNIO-1 task-2] l.server.io.RequestLoggingFilter         : GET /version
+2026-07-03T01:58:25.801Z  INFO 1 --- [Lavalink] [  XNIO-1 task-2] l.server.io.RequestLoggingFilter         : GET /version
+2026-07-03T01:58:35.835Z  INFO 1 --- [Lavalink] [  XNIO-1 task-2] l.server.io.RequestLoggingFilter         : GET /version
+2026-07-03T01:58:45.866Z  INFO 1 --- [Lavalink] [  XNIO-1 task-2] l.server.io.RequestLoggingFilter         : GET /version
+2026-07-03T01:58:55.898Z  INFO 1 --- [Lavalink] [  XNIO-1 task-2] l.server.io.RequestLoggingFilter         : GET /version
+2026-07-03T01:59:05.928Z  INFO 1 --- [Lavalink] [  XNIO-1 task-2] l.server.io.RequestLoggingFilter         : GET /version
+2026-07-03T01:59:15.959Z  INFO 1 --- [Lavalink] [  XNIO-1 task-2] l.server.io.RequestLoggingFilter         : GET /version
+2026-07-03T01:59:25.992Z  INFO 1 --- [Lavalink] [  XNIO-1 task-2] l.server.io.RequestLoggingFilter         : GET /version
+2026-07-03T01:59:36.022Z  INFO 1 --- [Lavalink] [  XNIO-1 task-2] l.server.io.RequestLoggingFilter         : GET /version
+2026-07-03T01:59:46.116Z  INFO 1 --- [Lavalink] [  XNIO-1 task-2] l.server.io.RequestLoggingFilter         : GET /version
+2026-07-03T01:59:56.151Z  INFO 1 --- [Lavalink] [  XNIO-1 task-2] l.server.io.RequestLoggingFilter         : GET /version
+2026-07-03T02:00:06.182Z  INFO 1 --- [Lavalink] [  XNIO-1 task-2] l.server.io.RequestLoggingFilter         : GET /version
+2026-07-03T02:00:16.215Z  INFO 1 --- [Lavalink] [  XNIO-1 task-2] l.server.io.RequestLoggingFilter         : GET /version
+2026-07-03T02:00:26.249Z  INFO 1 --- [Lavalink] [  XNIO-1 task-2] l.server.io.RequestLoggingFilter         : GET /version
+2026-07-03T02:00:36.281Z  INFO 1 --- [Lavalink] [  XNIO-1 task-2] l.server.io.RequestLoggingFilter         : GET /version
+2026-07-03T02:00:46.309Z  INFO 1 --- [Lavalink] [  XNIO-1 task-2] l.server.io.RequestLoggingFilter         : GET /version
+2026-07-03T02:00:56.342Z  INFO 1 --- [Lavalink] [  XNIO-1 task-2] l.server.io.RequestLoggingFilter         : GET /version
+2026-07-03T02:01:06.375Z  INFO 1 --- [Lavalink] [  XNIO-1 task-2] l.server.io.RequestLoggingFilter         : GET /version
+2026-07-03T02:01:16.406Z  INFO 1 --- [Lavalink] [  XNIO-1 task-2] l.server.io.RequestLoggingFilter         : GET /version
+2026-07-03T02:01:26.437Z  INFO 1 --- [Lavalink] [  XNIO-1 task-2] l.server.io.RequestLoggingFilter         : GET /version
+2026-07-03T02:01:36.469Z  INFO 1 --- [Lavalink] [  XNIO-1 task-2] l.server.io.RequestLoggingFilter         : GET /version
+2026-07-03T02:01:46.497Z  INFO 1 --- [Lavalink] [  XNIO-1 task-2] l.server.io.RequestLoggingFilter         : GET /version
+2026-07-03T02:01:56.530Z  INFO 1 --- [Lavalink] [  XNIO-1 task-2] l.server.io.RequestLoggingFilter         : GET /version
+2026-07-03T02:02:06.562Z  INFO 1 --- [Lavalink] [  XNIO-1 task-2] l.server.io.RequestLoggingFilter         : GET /version
+2026-07-03T02:02:16.592Z  INFO 1 --- [Lavalink] [  XNIO-1 task-2] l.server.io.RequestLoggingFilter         : GET /version
+2026-07-03T02:02:26.625Z  INFO 1 --- [Lavalink] [  XNIO-1 task-2] l.server.io.RequestLoggingFilter         : GET /version
+2026-07-03T02:02:36.656Z  INFO 1 --- [Lavalink] [  XNIO-1 task-2] l.server.io.RequestLoggingFilter         : GET /version
+2026-07-03T02:02:46.684Z  INFO 1 --- [Lavalink] [  XNIO-1 task-2] l.server.io.RequestLoggingFilter         : GET /version
+2026-07-03T02:02:56.715Z  INFO 1 --- [Lavalink] [  XNIO-1 task-2] l.server.io.RequestLoggingFilter         : GET /version
+2026-07-03T02:03:06.326Z  INFO 1 --- [Lavalink] [   XNIO-1 I/O-2] lavalink.server.io.SocketServer          : Connection closed from /172.18.0.2:46994 with id n7dkaj9pzssa0l3d -- CloseStatus[code=1006, reason=]
+2026-07-03T02:03:06.326Z  INFO 1 --- [Lavalink] [   XNIO-1 I/O-2] lavalink.server.io.SocketContext         : Shutting down 0 playing players.
+2026-07-03T02:03:06.744Z  INFO 1 --- [Lavalink] [  XNIO-1 task-2] l.server.io.RequestLoggingFilter         : GET /version
+2026-07-03T02:03:08.559Z  INFO 1 --- [Lavalink] [  XNIO-1 task-2] l.server.io.HandshakeInterceptorImpl     : Incoming connection from /172.18.0.2:36594
+2026-07-03T02:03:08.561Z  INFO 1 --- [Lavalink] [  XNIO-1 task-2] l.server.io.RequestLoggingFilter         : GET /v4/websocket
+2026-07-03T02:03:08.563Z  INFO 1 --- [Lavalink] [  XNIO-1 task-2] lavalink.server.io.SocketServer          : Connection successfully established from shoukaku/4.3.0 (https://github.com/shipgirlproject/Shoukaku.git)
+2026-07-03T02:03:16.774Z  INFO 1 --- [Lavalink] [  XNIO-1 task-2] l.server.io.RequestLoggingFilter         : GET /version
+2026-07-03T02:03:26.806Z  INFO 1 --- [Lavalink] [  XNIO-1 task-2] l.server.io.RequestLoggingFilter         : GET /version
+2026-07-03T02:03:36.837Z  INFO 1 --- [Lavalink] [  XNIO-1 task-2] l.server.io.RequestLoggingFilter         : GET /version
+2026-07-03T02:03:46.869Z  INFO 1 --- [Lavalink] [  XNIO-1 task-2] l.server.io.RequestLoggingFilter         : GET /version
+2026-07-03T02:03:49.065Z  INFO 1 --- [Lavalink] [  XNIO-1 task-2] l.server.player.AudioLoaderRestHandler   : Got request to load for identifier "ytsearch:bad"
+2026-07-03T02:03:49.065Z  INFO 1 --- [Lavalink] [  XNIO-1 task-3] l.server.player.AudioLoaderRestHandler   : Got request to load for identifier "spsearch:bad"
+2026-07-03T02:03:49.192Z  INFO 1 --- [Lavalink] [  XNIO-1 task-2] d.l.y.http.YoutubeAccessTokenTracker     : Updating YouTube visitor id succeeded, new one is CgtsU1ExUGZfQjRNcyjqsJzSBjIKCgJDTBIEGgAgZzoCCAFi3wIK3AIxOS5ZVD1ZajM5eWtKVnZncHhrT3ZWelVUb09qcUl2dzVCSWR1eVM4UHJQZkpPUHFHa0tjRVdReWN6X0tmbHRtUVpOMndFQ0RTeE5vLWNxTHpaZ2g5TWRfYXZQb0x6bnZ3RWlSZzBNMjl4LWlKSVp4SUtZaGdnWlNqeXhLb2ZNcktZRnhYM1ROX0Rfb19PLWwtcUdrVTRZWTVxSnFuaEZWUkRwVVNNYUFkQ0RHWWFKZU9uM1k2djVSY2JWZHg5a2tsRWxsMzJEekI2NVN4STUyX2JPN0JTRHJob0xFbFpUcmgteDRYVUxGLUJqTTZ4ejJ0aUlEZFBIakR3eHBkU1dMWFctb2x0QTA0eENRM1JIenRETnZra2RBU2hhZUVfNlAzelViR25QRG5tVzBsMEdub0R4YUNEZ0hpakg3S2lTdXZScUNkc1lmSGoyVlVObjRUaTNRUlpDajlSRUE%3D, next update will be after 600 seconds.
+2026-07-03T02:03:49.823Z  INFO 1 --- [Lavalink] [  XNIO-1 task-2] l.server.player.AudioLoaderRestHandler   : Loaded playlist Search results for: bad
+2026-07-03T02:03:49.873Z  INFO 1 --- [Lavalink] [  XNIO-1 task-2] l.server.io.RequestLoggingFilter         : GET /v4/loadtracks?identifier=ytsearch%3Abad
+2026-07-03T02:03:50.606Z ERROR 1 --- [Lavalink] [  XNIO-1 task-3] c.github.topi314.lavasrc.LavaSrcTools    : Server responded with an error to 'https://api.spotify.com/v1/artists?ids=3fMbdgg4jU18AjLCKBhRSm,4q3ewBCX7sLwd24euuV69X,4q3ewBCX7sLwd24euuV69X,4q3ewBCX7sLwd24euuV69X,4q3ewBCX7sLwd24euuV69X,4q3ewBCX7sLwd24euuV69X,4F4pp8NUW08JuXwnoxglpN,1HY2Jd0NmPuamShAr6KMms,33qOK5uJ8AR2xuQQAhHump,6eUKZXaKkcviH0Ku9w2n3V': {"error": {"status": 403, "message": "Forbidden" } }
+2026-07-03T02:03:50.644Z ERROR 1 --- [Lavalink] [  XNIO-1 task-3] l.server.player.AudioLoaderRestHandler   : Failed to load track for identifier spsearch:bad
+
+com.sedmelluq.discord.lavaplayer.tools.FriendlyException: Something went wrong while looking up the track.
+	at lavalink.server.util.LoadingKt.loadAudioItem(loading.kt:20) ~[classes!/:4.2.2]
+	at lavalink.server.player.AudioLoaderRestHandler.loadTracks(AudioLoaderRestHandler.kt:59) ~[classes!/:4.2.2]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(Unknown Source) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Unknown Source) ~[na:na]
+	at kotlin.reflect.jvm.internal.calls.CallerImpl$Method.callMethod(CallerImpl.kt:97) ~[kotlin-reflect-2.1.20.jar!/:2.1.20-release-217]
+	at kotlin.reflect.jvm.internal.calls.CallerImpl$Method$Instance.call(CallerImpl.kt:113) ~[kotlin-reflect-2.1.20.jar!/:2.1.20-release-217]
+	at kotlin.reflect.jvm.internal.KCallableImpl.callDefaultMethod$kotlin_reflection(KCallableImpl.kt:207) ~[kotlin-reflect-2.1.20.jar!/:2.1.20-release-217]
+	at kotlin.reflect.jvm.internal.KCallableImpl.callBy(KCallableImpl.kt:112) ~[kotlin-reflect-2.1.20.jar!/:2.1.20-release-217]
+	at org.springframework.web.method.support.InvocableHandlerMethod$KotlinDelegate.invokeFunction(InvocableHandlerMethod.java:334) ~[spring-web-6.1.15.jar!/:6.1.15]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:252) ~[spring-web-6.1.15.jar!/:6.1.15]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:188) ~[spring-web-6.1.15.jar!/:6.1.15]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118) ~[spring-webmvc-6.1.8.jar!/:6.1.8]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:926) ~[spring-webmvc-6.1.8.jar!/:6.1.8]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:831) ~[spring-webmvc-6.1.8.jar!/:6.1.8]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-6.1.8.jar!/:6.1.8]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089) ~[spring-webmvc-6.1.8.jar!/:6.1.8]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979) ~[spring-webmvc-6.1.8.jar!/:6.1.8]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014) ~[spring-webmvc-6.1.8.jar!/:6.1.8]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903) ~[spring-webmvc-6.1.8.jar!/:6.1.8]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:527) ~[jakarta.servlet-api-6.0.0.jar!/:6.0.0]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885) ~[spring-webmvc-6.1.8.jar!/:6.1.8]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:614) ~[jakarta.servlet-api-6.0.0.jar!/:6.0.0]
+	at io.undertow.servlet.handlers.ServletHandler.handleRequest(ServletHandler.java:74) ~[undertow-servlet-2.3.13.Final.jar!/:2.3.13.Final]
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:129) ~[undertow-servlet-2.3.13.Final.jar!/:2.3.13.Final]
+	at org.springframework.web.filter.AbstractRequestLoggingFilter.doFilterInternal(AbstractRequestLoggingFilter.java:289) ~[spring-web-6.1.15.jar!/:6.1.15]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.15.jar!/:6.1.15]
+	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:67) ~[undertow-servlet-2.3.13.Final.jar!/:2.3.13.Final]
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131) ~[undertow-servlet-2.3.13.Final.jar!/:2.3.13.Final]
+	at lavalink.server.io.ResponseHeaderFilter.doFilterInternal(ResponseHeaderFilter.kt:17) ~[classes!/:4.2.2]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.15.jar!/:6.1.15]
+	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:67) ~[undertow-servlet-2.3.13.Final.jar!/:2.3.13.Final]
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131) ~[undertow-servlet-2.3.13.Final.jar!/:2.3.13.Final]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-6.1.15.jar!/:6.1.15]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.15.jar!/:6.1.15]
+	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:67) ~[undertow-servlet-2.3.13.Final.jar!/:2.3.13.Final]
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131) ~[undertow-servlet-2.3.13.Final.jar!/:2.3.13.Final]
+	at io.undertow.servlet.handlers.FilterHandler.handleRequest(FilterHandler.java:84) ~[undertow-servlet-2.3.13.Final.jar!/:2.3.13.Final]
+	at io.undertow.servlet.handlers.security.ServletSecurityRoleHandler.handleRequest(ServletSecurityRoleHandler.java:62) ~[undertow-servlet-2.3.13.Final.jar!/:2.3.13.Final]
+	at io.undertow.servlet.handlers.ServletChain$1.handleRequest(ServletChain.java:68) ~[undertow-servlet-2.3.13.Final.jar!/:2.3.13.Final]
+	at io.undertow.servlet.handlers.ServletDispatchingHandler.handleRequest(ServletDispatchingHandler.java:36) ~[undertow-servlet-2.3.13.Final.jar!/:2.3.13.Final]
+	at io.undertow.servlet.handlers.RedirectDirHandler.handleRequest(RedirectDirHandler.java:68) ~[undertow-servlet-2.3.13.Final.jar!/:2.3.13.Final]
+	at io.undertow.servlet.handlers.security.SSLInformationAssociationHandler.handleRequest(SSLInformationAssociationHandler.java:117) ~[undertow-servlet-2.3.13.Final.jar!/:2.3.13.Final]
+	at io.undertow.servlet.handlers.security.ServletAuthenticationCallHandler.handleRequest(ServletAuthenticationCallHandler.java:57) ~[undertow-servlet-2.3.13.Final.jar!/:2.3.13.Final]
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43) ~[undertow-core-2.3.13.Final.jar!/:2.3.13.Final]
+	at io.undertow.security.handlers.AbstractConfidentialityHandler.handleRequest(AbstractConfidentialityHandler.java:46) ~[undertow-core-2.3.13.Final.jar!/:2.3.13.Final]
+	at io.undertow.servlet.handlers.security.ServletConfidentialityConstraintHandler.handleRequest(ServletConfidentialityConstraintHandler.java:64) ~[undertow-servlet-2.3.13.Final.jar!/:2.3.13.Final]
+	at io.undertow.security.handlers.AuthenticationMechanismsHandler.handleRequest(AuthenticationMechanismsHandler.java:60) ~[undertow-core-2.3.13.Final.jar!/:2.3.13.Final]
+	at io.undertow.servlet.handlers.security.CachedAuthenticatedSessionHandler.handleRequest(CachedAuthenticatedSessionHandler.java:77) ~[undertow-servlet-2.3.13.Final.jar!/:2.3.13.Final]
+	at io.undertow.security.handlers.AbstractSecurityContextAssociationHandler.handleRequest(AbstractSecurityContextAssociationHandler.java:43) ~[undertow-core-2.3.13.Final.jar!/:2.3.13.Final]
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43) ~[undertow-core-2.3.13.Final.jar!/:2.3.13.Final]
+	at io.undertow.servlet.handlers.SendErrorPageHandler.handleRequest(SendErrorPageHandler.java:52) ~[undertow-servlet-2.3.13.Final.jar!/:2.3.13.Final]
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43) ~[undertow-core-2.3.13.Final.jar!/:2.3.13.Final]
+	at io.undertow.servlet.handlers.ServletInitialHandler.handleFirstRequest(ServletInitialHandler.java:276) ~[undertow-servlet-2.3.13.Final.jar!/:2.3.13.Final]
+	at io.undertow.servlet.handlers.ServletInitialHandler$2.call(ServletInitialHandler.java:135) ~[undertow-servlet-2.3.13.Final.jar!/:2.3.13.Final]
+	at io.undertow.servlet.handlers.ServletInitialHandler$2.call(ServletInitialHandler.java:132) ~[undertow-servlet-2.3.13.Final.jar!/:2.3.13.Final]
+	at io.undertow.servlet.core.ServletRequestContextThreadSetupAction$1.call(ServletRequestContextThreadSetupAction.java:48) ~[undertow-servlet-2.3.13.Final.jar!/:2.3.13.Final]
+	at io.undertow.servlet.core.ContextClassLoaderSetupAction$1.call(ContextClassLoaderSetupAction.java:43) ~[undertow-servlet-2.3.13.Final.jar!/:2.3.13.Final]
+	at io.undertow.servlet.handlers.ServletInitialHandler.dispatchRequest(ServletInitialHandler.java:256) ~[undertow-servlet-2.3.13.Final.jar!/:2.3.13.Final]
+	at io.undertow.servlet.handlers.ServletInitialHandler$1.handleRequest(ServletInitialHandler.java:101) ~[undertow-servlet-2.3.13.Final.jar!/:2.3.13.Final]
+	at io.undertow.server.Connectors.executeRootHandler(Connectors.java:393) ~[undertow-core-2.3.13.Final.jar!/:2.3.13.Final]
+	at io.undertow.server.HttpServerExchange$1.run(HttpServerExchange.java:859) ~[undertow-core-2.3.13.Final.jar!/:2.3.13.Final]
+	at org.jboss.threads.ContextHandler$1.runWith(ContextHandler.java:18) ~[jboss-threads-3.5.0.Final.jar!/:3.5.0.Final]
+	at org.jboss.threads.EnhancedQueueExecutor$Task.run(EnhancedQueueExecutor.java:2513) ~[jboss-threads-3.5.0.Final.jar!/:3.5.0.Final]
+	at org.jboss.threads.EnhancedQueueExecutor$ThreadBody.run(EnhancedQueueExecutor.java:1512) ~[jboss-threads-3.5.0.Final.jar!/:3.5.0.Final]
+	at org.xnio.XnioWorker$WorkerThreadFactory$1$1.run(XnioWorker.java:1282) ~[xnio-api-3.8.8.Final.jar!/:3.8.8.Final]
+	at java.base/java.lang.Thread.run(Unknown Source) ~[na:na]
+Caused by: com.sedmelluq.discord.lavaplayer.tools.FriendlyException: Server responded with an error.
+	at com.github.topi314.lavasrc.LavaSrcTools.fetchResponseAsJson(LavaSrcTools.java:39) ~[lavasrc-plugin-4.8.3.jar!/:na]
+	at com.github.topi314.lavasrc.spotify.SpotifySourceManager.getJson(SpotifySourceManager.java:306) ~[lavasrc-plugin-4.8.3.jar!/:na]
+	at com.github.topi314.lavasrc.spotify.SpotifySourceManager.getSearch(SpotifySourceManager.java:388) ~[lavasrc-plugin-4.8.3.jar!/:na]
+	at com.github.topi314.lavasrc.spotify.SpotifySourceManager.loadItem(SpotifySourceManager.java:256) ~[lavasrc-plugin-4.8.3.jar!/:na]
+	at com.github.topi314.lavasrc.spotify.SpotifySourceManager.loadItem(SpotifySourceManager.java:250) ~[lavasrc-plugin-4.8.3.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.player.DefaultAudioPlayerManager.checkSourcesForItemOnce(DefaultAudioPlayerManager.java:442) ~[lavaplayer-2.2.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.player.DefaultAudioPlayerManager.checkSourcesForItem(DefaultAudioPlayerManager.java:423) ~[lavaplayer-2.2.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.player.DefaultAudioPlayerManager.loadItemSync(DefaultAudioPlayerManager.java:154) ~[lavaplayer-2.2.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.player.AudioPlayerManager.loadItemSync(AudioPlayerManager.java:127) ~[lavaplayer-2.2.6.jar!/:na]
+	at lavalink.server.util.LoadingKt.loadAudioItem(loading.kt:15) ~[classes!/:4.2.2]
+	... 65 common frames omitted
+Caused by: java.lang.IllegalStateException: Response code from channel info is 403
+	... 75 common frames omitted
+
+2026-07-03T02:03:50.655Z  INFO 1 --- [Lavalink] [  XNIO-1 task-3] l.server.io.RequestLoggingFilter         : GET /v4/loadtracks?identifier=spsearch%3Abad
+2026-07-03T02:03:56.103Z  INFO 1 --- [Lavalink] [  XNIO-1 task-3] l.server.io.RequestLoggingFilter         : PATCH /v4/sessions/n7h5hcm64fcuo9kr/players/397085993901096970?noReplace=false, payload={"voice":{"token":"fe232e2e6bfc8cc9","endpoint":"c-scl04-0651b6d4.discord.media:2053","sessionId":"5f4742110fd9197b6da9f0e431a9d948","channelId":"1091398356267450368"}}
+2026-07-03T02:03:56.106Z  INFO 1 --- [Lavalink] [  XNIO-1 task-3] l.server.player.AudioLoaderRestHandler   : Got request to load for identifier "https://www.youtube.com/watch?v=dsUXAEzaC3Q"
+2026-07-03T02:03:56.213Z  INFO 1 --- [Lavalink] [  XNIO-1 task-3] l.server.player.AudioLoaderRestHandler   : Loaded track Michael Jackson - Bad (Shortened Version)
+2026-07-03T02:03:56.215Z  INFO 1 --- [Lavalink] [  XNIO-1 task-3] l.server.io.RequestLoggingFilter         : GET /v4/loadtracks?identifier=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DdsUXAEzaC3Q
+2026-07-03T02:03:56.228Z  INFO 1 --- [Lavalink] [  XNIO-1 task-3] l.server.io.RequestLoggingFilter         : PATCH /v4/sessions/n7h5hcm64fcuo9kr/players/397085993901096970?noReplace=false, payload={"track":{"encoded":"QAAAyQMAKU1pY2hhZWwgSmFja3NvbiAtIEJhZCAoU2hvcnRlbmVkIFZlcnNpb24pABJtaWNoYWVsamFja3NvblZFVk8AAAAAAAP3oAALZHNVWEFFemFDM1EAAQAraHR0cHM6Ly93d3cueW91dHViZS5jb20vd2F0Y2g/dj1kc1VYQUV6YUMzUQEAMGh0dHBzOi8vaS55dGltZy5jb20vdmkvZHNVWEFFemFDM1EvbXFkZWZhdWx0LmpwZwAAB3lvdXR1YmUAAAAAAAAAAA=="}}
+2026-07-03T02:03:56.900Z  INFO 1 --- [Lavalink] [  XNIO-1 task-3] l.server.io.RequestLoggingFilter         : GET /version
+2026-07-03T02:03:57.105Z ERROR 1 --- [Lavalink] [back-1-thread-1] d.l.y.c.LocalSignatureCipherManager      : Problematic YouTube player script /s/player/4918c89a/player_embed.vflset/es_MX/base.js detected (issue detected with script: must find sig function). Dumped to /tmp/lavaplayer-yt-player-script4525237322782459395.js (Source version: 1.18.1)
+2026-07-03T02:04:06.931Z  INFO 1 --- [Lavalink] [  XNIO-1 task-3] l.server.io.RequestLoggingFilter         : GET /version
+2026-07-03T02:04:16.961Z  INFO 1 --- [Lavalink] [  XNIO-1 task-3] l.server.io.RequestLoggingFilter         : GET /version
+2026-07-03T02:04:26.991Z  INFO 1 --- [Lavalink] [  XNIO-1 task-3] l.server.io.RequestLoggingFilter         : GET /version
+2026-07-03T02:04:37.023Z  INFO 1 --- [Lavalink] [  XNIO-1 task-3] l.server.io.RequestLoggingFilter         : GET /version
+2026-07-03T02:04:47.055Z  INFO 1 --- [Lavalink] [  XNIO-1 task-3] l.server.io.RequestLoggingFilter         : GET /version
+2026-07-03T02:04:57.088Z  INFO 1 --- [Lavalink] [  XNIO-1 task-3] l.server.io.RequestLoggingFilter         : GET /version
+2026-07-03T02:05:01.104Z  INFO 1 --- [Lavalink] [  XNIO-1 task-3] l.server.player.AudioLoaderRestHandler   : Got request to load for identifier "ytsearch:https://open.spotify.com/intl-es/track/0DfG1ltJnZyq4Tx3ZLL7ZU?si=c8abb8c2523448ae"
+2026-07-03T02:05:01.104Z  INFO 1 --- [Lavalink] [  XNIO-1 task-2] l.server.player.AudioLoaderRestHandler   : Got request to load for identifier "spsearch:https://open.spotify.com/intl-es/track/0DfG1ltJnZyq4Tx3ZLL7ZU?si=c8abb8c2523448ae"
+2026-07-03T02:05:01.475Z  INFO 1 --- [Lavalink] [  XNIO-1 task-3] l.server.io.RequestLoggingFilter         : GET /v4/loadtracks?identifier=ytsearch%3Ahttps%3A%2F%2Fopen.spotify.com%2Fintl-es%2Ftrack%2F0DfG1ltJnZyq4Tx3ZLL7ZU%3Fsi%3Dc8abb8c2523448ae
+2026-07-03T02:05:02.095Z ERROR 1 --- [Lavalink] [  XNIO-1 task-2] c.github.topi314.lavasrc.LavaSrcTools    : Server responded with an error to 'https://api.spotify.com/v1/artists?ids=6WzyAaCTzd5YoVMwdin58T,3Lgh7LDbM89MiQviMT5H1D,4cCVNFShP38zaKGuo8QSMN,4cCVNFShP38zaKGuo8QSMN,0Yg29FX1M4ayqjXs0ttZFq,2YB75f3AI0PqcfW4kQ4kIz,6yYRLzRO7whe1IjNtvEQOV,50u2mXgysmTttY0BizYWAo,4ddGNvJbt4sq3OaCCzAPV9': {"error": {"status": 403, "message": "Forbidden" } }
+2026-07-03T02:05:02.123Z  INFO 1 --- [Lavalink] [  XNIO-1 task-3] l.server.player.AudioLoaderRestHandler   : Got request to load for identifier "https://open.spotify.com/intl-es/track/0DfG1ltJnZyq4Tx3ZLL7ZU?si=c8abb8c2523448ae"
+2026-07-03T02:05:02.127Z ERROR 1 --- [Lavalink] [  XNIO-1 task-2] l.server.player.AudioLoaderRestHandler   : Failed to load track for identifier spsearch:https://open.spotify.com/intl-es/track/0DfG1ltJnZyq4Tx3ZLL7ZU?si=c8abb8c2523448ae
+
+com.sedmelluq.discord.lavaplayer.tools.FriendlyException: Something went wrong while looking up the track.
+	at lavalink.server.util.LoadingKt.loadAudioItem(loading.kt:20) ~[classes!/:4.2.2]
+	at lavalink.server.player.AudioLoaderRestHandler.loadTracks(AudioLoaderRestHandler.kt:59) ~[classes!/:4.2.2]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(Unknown Source) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Unknown Source) ~[na:na]
+	at kotlin.reflect.jvm.internal.calls.CallerImpl$Method.callMethod(CallerImpl.kt:97) ~[kotlin-reflect-2.1.20.jar!/:2.1.20-release-217]
+	at kotlin.reflect.jvm.internal.calls.CallerImpl$Method$Instance.call(CallerImpl.kt:113) ~[kotlin-reflect-2.1.20.jar!/:2.1.20-release-217]
+	at kotlin.reflect.jvm.internal.KCallableImpl.callDefaultMethod$kotlin_reflection(KCallableImpl.kt:207) ~[kotlin-reflect-2.1.20.jar!/:2.1.20-release-217]
+	at kotlin.reflect.jvm.internal.KCallableImpl.callBy(KCallableImpl.kt:112) ~[kotlin-reflect-2.1.20.jar!/:2.1.20-release-217]
+	at org.springframework.web.method.support.InvocableHandlerMethod$KotlinDelegate.invokeFunction(InvocableHandlerMethod.java:334) ~[spring-web-6.1.15.jar!/:6.1.15]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:252) ~[spring-web-6.1.15.jar!/:6.1.15]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:188) ~[spring-web-6.1.15.jar!/:6.1.15]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118) ~[spring-webmvc-6.1.8.jar!/:6.1.8]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:926) ~[spring-webmvc-6.1.8.jar!/:6.1.8]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:831) ~[spring-webmvc-6.1.8.jar!/:6.1.8]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-6.1.8.jar!/:6.1.8]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089) ~[spring-webmvc-6.1.8.jar!/:6.1.8]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979) ~[spring-webmvc-6.1.8.jar!/:6.1.8]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014) ~[spring-webmvc-6.1.8.jar!/:6.1.8]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903) ~[spring-webmvc-6.1.8.jar!/:6.1.8]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:527) ~[jakarta.servlet-api-6.0.0.jar!/:6.0.0]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885) ~[spring-webmvc-6.1.8.jar!/:6.1.8]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:614) ~[jakarta.servlet-api-6.0.0.jar!/:6.0.0]
+	at io.undertow.servlet.handlers.ServletHandler.handleRequest(ServletHandler.java:74) ~[undertow-servlet-2.3.13.Final.jar!/:2.3.13.Final]
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:129) ~[undertow-servlet-2.3.13.Final.jar!/:2.3.13.Final]
+	at org.springframework.web.filter.AbstractRequestLoggingFilter.doFilterInternal(AbstractRequestLoggingFilter.java:289) ~[spring-web-6.1.15.jar!/:6.1.15]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.15.jar!/:6.1.15]
+	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:67) ~[undertow-servlet-2.3.13.Final.jar!/:2.3.13.Final]
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131) ~[undertow-servlet-2.3.13.Final.jar!/:2.3.13.Final]
+	at lavalink.server.io.ResponseHeaderFilter.doFilterInternal(ResponseHeaderFilter.kt:17) ~[classes!/:4.2.2]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.15.jar!/:6.1.15]
+	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:67) ~[undertow-servlet-2.3.13.Final.jar!/:2.3.13.Final]
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131) ~[undertow-servlet-2.3.13.Final.jar!/:2.3.13.Final]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-6.1.15.jar!/:6.1.15]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.15.jar!/:6.1.15]
+	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:67) ~[undertow-servlet-2.3.13.Final.jar!/:2.3.13.Final]
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131) ~[undertow-servlet-2.3.13.Final.jar!/:2.3.13.Final]
+	at io.undertow.servlet.handlers.FilterHandler.handleRequest(FilterHandler.java:84) ~[undertow-servlet-2.3.13.Final.jar!/:2.3.13.Final]
+	at io.undertow.servlet.handlers.security.ServletSecurityRoleHandler.handleRequest(ServletSecurityRoleHandler.java:62) ~[undertow-servlet-2.3.13.Final.jar!/:2.3.13.Final]
+	at io.undertow.servlet.handlers.ServletChain$1.handleRequest(ServletChain.java:68) ~[undertow-servlet-2.3.13.Final.jar!/:2.3.13.Final]
+	at io.undertow.servlet.handlers.ServletDispatchingHandler.handleRequest(ServletDispatchingHandler.java:36) ~[undertow-servlet-2.3.13.Final.jar!/:2.3.13.Final]
+	at io.undertow.servlet.handlers.RedirectDirHandler.handleRequest(RedirectDirHandler.java:68) ~[undertow-servlet-2.3.13.Final.jar!/:2.3.13.Final]
+	at io.undertow.servlet.handlers.security.SSLInformationAssociationHandler.handleRequest(SSLInformationAssociationHandler.java:117) ~[undertow-servlet-2.3.13.Final.jar!/:2.3.13.Final]
+	at io.undertow.servlet.handlers.security.ServletAuthenticationCallHandler.handleRequest(ServletAuthenticationCallHandler.java:57) ~[undertow-servlet-2.3.13.Final.jar!/:2.3.13.Final]
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43) ~[undertow-core-2.3.13.Final.jar!/:2.3.13.Final]
+	at io.undertow.security.handlers.AbstractConfidentialityHandler.handleRequest(AbstractConfidentialityHandler.java:46) ~[undertow-core-2.3.13.Final.jar!/:2.3.13.Final]
+	at io.undertow.servlet.handlers.security.ServletConfidentialityConstraintHandler.handleRequest(ServletConfidentialityConstraintHandler.java:64) ~[undertow-servlet-2.3.13.Final.jar!/:2.3.13.Final]
+	at io.undertow.security.handlers.AuthenticationMechanismsHandler.handleRequest(AuthenticationMechanismsHandler.java:60) ~[undertow-core-2.3.13.Final.jar!/:2.3.13.Final]
+	at io.undertow.servlet.handlers.security.CachedAuthenticatedSessionHandler.handleRequest(CachedAuthenticatedSessionHandler.java:77) ~[undertow-servlet-2.3.13.Final.jar!/:2.3.13.Final]
+	at io.undertow.security.handlers.AbstractSecurityContextAssociationHandler.handleRequest(AbstractSecurityContextAssociationHandler.java:43) ~[undertow-core-2.3.13.Final.jar!/:2.3.13.Final]
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43) ~[undertow-core-2.3.13.Final.jar!/:2.3.13.Final]
+	at io.undertow.servlet.handlers.SendErrorPageHandler.handleRequest(SendErrorPageHandler.java:52) ~[undertow-servlet-2.3.13.Final.jar!/:2.3.13.Final]
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43) ~[undertow-core-2.3.13.Final.jar!/:2.3.13.Final]
+	at io.undertow.servlet.handlers.ServletInitialHandler.handleFirstRequest(ServletInitialHandler.java:276) ~[undertow-servlet-2.3.13.Final.jar!/:2.3.13.Final]
+	at io.undertow.servlet.handlers.ServletInitialHandler$2.call(ServletInitialHandler.java:135) ~[undertow-servlet-2.3.13.Final.jar!/:2.3.13.Final]
+	at io.undertow.servlet.handlers.ServletInitialHandler$2.call(ServletInitialHandler.java:132) ~[undertow-servlet-2.3.13.Final.jar!/:2.3.13.Final]
+	at io.undertow.servlet.core.ServletRequestContextThreadSetupAction$1.call(ServletRequestContextThreadSetupAction.java:48) ~[undertow-servlet-2.3.13.Final.jar!/:2.3.13.Final]
+	at io.undertow.servlet.core.ContextClassLoaderSetupAction$1.call(ContextClassLoaderSetupAction.java:43) ~[undertow-servlet-2.3.13.Final.jar!/:2.3.13.Final]
+	at io.undertow.servlet.handlers.ServletInitialHandler.dispatchRequest(ServletInitialHandler.java:256) ~[undertow-servlet-2.3.13.Final.jar!/:2.3.13.Final]
+	at io.undertow.servlet.handlers.ServletInitialHandler$1.handleRequest(ServletInitialHandler.java:101) ~[undertow-servlet-2.3.13.Final.jar!/:2.3.13.Final]
+	at io.undertow.server.Connectors.executeRootHandler(Connectors.java:393) ~[undertow-core-2.3.13.Final.jar!/:2.3.13.Final]
+	at io.undertow.server.HttpServerExchange$1.run(HttpServerExchange.java:859) ~[undertow-core-2.3.13.Final.jar!/:2.3.13.Final]
+	at org.jboss.threads.ContextHandler$1.runWith(ContextHandler.java:18) ~[jboss-threads-3.5.0.Final.jar!/:3.5.0.Final]
+	at org.jboss.threads.EnhancedQueueExecutor$Task.run(EnhancedQueueExecutor.java:2513) ~[jboss-threads-3.5.0.Final.jar!/:3.5.0.Final]
+	at org.jboss.threads.EnhancedQueueExecutor$ThreadBody.run(EnhancedQueueExecutor.java:1538) ~[jboss-threads-3.5.0.Final.jar!/:3.5.0.Final]
+	at org.xnio.XnioWorker$WorkerThreadFactory$1$1.run(XnioWorker.java:1282) ~[xnio-api-3.8.8.Final.jar!/:3.8.8.Final]
+	at java.base/java.lang.Thread.run(Unknown Source) ~[na:na]
+Caused by: com.sedmelluq.discord.lavaplayer.tools.FriendlyException: Server responded with an error.
+	at com.github.topi314.lavasrc.LavaSrcTools.fetchResponseAsJson(LavaSrcTools.java:39) ~[lavasrc-plugin-4.8.3.jar!/:na]
+	at com.github.topi314.lavasrc.spotify.SpotifySourceManager.getJson(SpotifySourceManager.java:306) ~[lavasrc-plugin-4.8.3.jar!/:na]
+	at com.github.topi314.lavasrc.spotify.SpotifySourceManager.getSearch(SpotifySourceManager.java:388) ~[lavasrc-plugin-4.8.3.jar!/:na]
+	at com.github.topi314.lavasrc.spotify.SpotifySourceManager.loadItem(SpotifySourceManager.java:256) ~[lavasrc-plugin-4.8.3.jar!/:na]
+	at com.github.topi314.lavasrc.spotify.SpotifySourceManager.loadItem(SpotifySourceManager.java:250) ~[lavasrc-plugin-4.8.3.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.player.DefaultAudioPlayerManager.checkSourcesForItemOnce(DefaultAudioPlayerManager.java:442) ~[lavaplayer-2.2.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.player.DefaultAudioPlayerManager.checkSourcesForItem(DefaultAudioPlayerManager.java:423) ~[lavaplayer-2.2.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.player.DefaultAudioPlayerManager.loadItemSync(DefaultAudioPlayerManager.java:154) ~[lavaplayer-2.2.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.player.AudioPlayerManager.loadItemSync(AudioPlayerManager.java:127) ~[lavaplayer-2.2.6.jar!/:na]
+	at lavalink.server.util.LoadingKt.loadAudioItem(loading.kt:15) ~[classes!/:4.2.2]
+	... 65 common frames omitted
+Caused by: java.lang.IllegalStateException: Response code from channel info is 403
+	... 75 common frames omitted
+
+2026-07-03T02:05:02.130Z  INFO 1 --- [Lavalink] [  XNIO-1 task-2] l.server.io.RequestLoggingFilter         : GET /v4/loadtracks?identifier=spsearch%3Ahttps%3A%2F%2Fopen.spotify.com%2Fintl-es%2Ftrack%2F0DfG1ltJnZyq4Tx3ZLL7ZU%3Fsi%3Dc8abb8c2523448ae
+2026-07-03T02:05:02.896Z  INFO 1 --- [Lavalink] [  XNIO-1 task-3] l.server.player.AudioLoaderRestHandler   : Loaded track Rock Me Amadeus
+2026-07-03T02:05:02.901Z  INFO 1 --- [Lavalink] [  XNIO-1 task-3] l.server.io.RequestLoggingFilter         : GET /v4/loadtracks?identifier=https%3A%2F%2Fopen.spotify.com%2Fintl-es%2Ftrack%2F0DfG1ltJnZyq4Tx3ZLL7ZU%3Fsi%3Dc8abb8c2523448ae
+2026-07-03T02:05:07.120Z  INFO 1 --- [Lavalink] [  XNIO-1 task-3] l.server.io.RequestLoggingFilter         : GET /version
+2026-07-03T02:05:17.150Z  INFO 1 --- [Lavalink] [  XNIO-1 task-3] l.server.io.RequestLoggingFilter         : GET /version
+2026-07-03T02:05:27.183Z  INFO 1 --- [Lavalink] [  XNIO-1 task-3] l.server.io.RequestLoggingFilter         : GET /version
+2026-07-03T02:05:37.215Z  INFO 1 --- [Lavalink] [  XNIO-1 task-3] l.server.io.RequestLoggingFilter         : GET /version
+2026-07-03T02:05:47.249Z  INFO 1 --- [Lavalink] [  XNIO-1 task-3] l.server.io.RequestLoggingFilter         : GET /version
+2026-07-03T02:05:57.287Z  INFO 1 --- [Lavalink] [  XNIO-1 task-3] l.server.io.RequestLoggingFilter         : GET /version
+2026-07-03T02:06:07.320Z  INFO 1 --- [Lavalink] [  XNIO-1 task-3] l.server.io.RequestLoggingFilter         : GET /version
+2026-07-03T02:06:17.355Z  INFO 1 --- [Lavalink] [  XNIO-1 task-3] l.server.io.RequestLoggingFilter         : GET /version
+2026-07-03T02:06:27.387Z  INFO 1 --- [Lavalink] [  XNIO-1 task-3] l.server.io.RequestLoggingFilter         : GET /version
+2026-07-03T02:06:37.419Z  INFO 1 --- [Lavalink] [  XNIO-1 task-3] l.server.io.RequestLoggingFilter         : GET /version
+2026-07-03T02:06:47.450Z  INFO 1 --- [Lavalink] [  XNIO-1 task-3] l.server.io.RequestLoggingFilter         : GET /version
+2026-07-03T02:06:57.481Z  INFO 1 --- [Lavalink] [  XNIO-1 task-3] l.server.io.RequestLoggingFilter         : GET /version
+2026-07-03T02:07:07.513Z  INFO 1 --- [Lavalink] [  XNIO-1 task-3] l.server.io.RequestLoggingFilter         : GET /version
+2026-07-03T02:07:17.543Z  INFO 1 --- [Lavalink] [  XNIO-1 task-3] l.server.io.RequestLoggingFilter         : GET /version
+2026-07-03T02:07:27.575Z  INFO 1 --- [Lavalink] [  XNIO-1 task-3] l.server.io.RequestLoggingFilter         : GET /version
+2026-07-03T02:07:37.607Z  INFO 1 --- [Lavalink] [  XNIO-1 task-3] l.server.io.RequestLoggingFilter         : GET /version
+2026-07-03T02:07:47.638Z  INFO 1 --- [Lavalink] [  XNIO-1 task-3] l.server.io.RequestLoggingFilter         : GET /version
+2026-07-03T02:07:57.674Z  INFO 1 --- [Lavalink] [  XNIO-1 task-3] l.server.io.RequestLoggingFilter         : GET /version
+2026-07-03T02:08:07.708Z  INFO 1 --- [Lavalink] [  XNIO-1 task-3] l.server.io.RequestLoggingFilter         : GET /version
+2026-07-03T02:08:16.745Z  INFO 1 --- [Lavalink] [  XNIO-1 task-3] l.server.io.RequestLoggingFilter         : PATCH /v4/sessions/n7h5hcm64fcuo9kr/players/397085993901096970?noReplace=false, payload={"track":{"encoded":"QAABlQMAD1JvY2sgTWUgQW1hZGV1cwAFRmFsY28AAAAAAAMV/AAWMERmRzFsdEpuWnlxNFR4M1pMTDdaVQABADVodHRwczovL29wZW4uc3BvdGlmeS5jb20vdHJhY2svMERmRzFsdEpuWnlxNFR4M1pMTDdaVQEAQGh0dHBzOi8vaS5zY2RuLmNvL2ltYWdlL2FiNjc2MTZkMDAwMGIyNzM3MzFkMmViMDQ1NDFiZWY5ZTQ0MzRkNGUBAAxBVEIxNTg1MDAwMTgAB3Nwb3RpZnkBAAdGYWxjbyAzAQA1aHR0cHM6Ly9vcGVuLnNwb3RpZnkuY29tL2FsYnVtLzRzaGRrYnYwaklzdFpoU3JwTVI5d2gBADZodHRwczovL29wZW4uc3BvdGlmeS5jb20vYXJ0aXN0LzBoTGQ0MGhWcFJER0VOZTRLR1pMblcBAEBodHRwczovL2kuc2Nkbi5jby9pbWFnZS9hYjY3NjE2MTAwMDBlNWViODMwOGZiY2I2ZmM5MjBlNzljM2EzY2FlAAAAAAAAAAAAAA=="}}
+2026-07-03T02:08:17.740Z  INFO 1 --- [Lavalink] [  XNIO-1 task-3] l.server.io.RequestLoggingFilter         : GET /version
+2026-07-03T02:08:27.771Z  INFO 1 --- [Lavalink] [  XNIO-1 task-3] l.server.io.RequestLoggingFilter         : GET /version
+2026-07-03T02:08:37.803Z  INFO 1 --- [Lavalink] [  XNIO-1 task-3] l.server.io.RequestLoggingFilter         : GET /version
+2026-07-03T02:08:47.834Z  INFO 1 --- [Lavalink] [  XNIO-1 task-3] l.server.io.RequestLoggingFilter         : GET /version
+2026-07-03T02:08:57.865Z  INFO 1 --- [Lavalink] [  XNIO-1 task-3] l.server.io.RequestLoggingFilter         : GET /version
+2026-07-03T02:09:00.705Z  INFO 1 --- [Lavalink] [  XNIO-1 task-3] l.server.player.AudioLoaderRestHandler   : Got request to load for identifier "ytsearch:https://open.spotify.com/playlist/37i9dQZF1E8JuTpPiqjZ12?si=2517fa855fd7488a"
+2026-07-03T02:09:00.705Z  INFO 1 --- [Lavalink] [  XNIO-1 task-2] l.server.player.AudioLoaderRestHandler   : Got request to load for identifier "spsearch:https://open.spotify.com/playlist/37i9dQZF1E8JuTpPiqjZ12?si=2517fa855fd7488a"
+2026-07-03T02:09:01.098Z  INFO 1 --- [Lavalink] [  XNIO-1 task-3] l.server.io.RequestLoggingFilter         : GET /v4/loadtracks?identifier=ytsearch%3Ahttps%3A%2F%2Fopen.spotify.com%2Fplaylist%2F37i9dQZF1E8JuTpPiqjZ12%3Fsi%3D2517fa855fd7488a
+2026-07-03T02:09:01.753Z ERROR 1 --- [Lavalink] [  XNIO-1 task-2] c.github.topi314.lavasrc.LavaSrcTools    : Server responded with an error to 'https://api.spotify.com/v1/artists?ids=4kKazhy9tDfOgKSWm5g3F9,35oGZihZclGoTVuICPXRP9,10VBp06W8NIgMW4JruLCC4,1yh29osKJYH6l9JlPFgpLY,10VBp06W8NIgMW4JruLCC4,39hfuTf4PHfnHgIl0QBDGL,2YB75f3AI0PqcfW4kQ4kIz,10VBp06W8NIgMW4JruLCC4,4xEDJHMQ8PN1U2pEldwI6O': {"error": {"status": 403, "message": "Forbidden" } }
+2026-07-03T02:09:01.788Z ERROR 1 --- [Lavalink] [  XNIO-1 task-2] l.server.player.AudioLoaderRestHandler   : Failed to load track for identifier spsearch:https://open.spotify.com/playlist/37i9dQZF1E8JuTpPiqjZ12?si=2517fa855fd7488a
+
+com.sedmelluq.discord.lavaplayer.tools.FriendlyException: Something went wrong while looking up the track.
+	at lavalink.server.util.LoadingKt.loadAudioItem(loading.kt:20) ~[classes!/:4.2.2]
+	at lavalink.server.player.AudioLoaderRestHandler.loadTracks(AudioLoaderRestHandler.kt:59) ~[classes!/:4.2.2]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(Unknown Source) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Unknown Source) ~[na:na]
+	at kotlin.reflect.jvm.internal.calls.CallerImpl$Method.callMethod(CallerImpl.kt:97) ~[kotlin-reflect-2.1.20.jar!/:2.1.20-release-217]
+	at kotlin.reflect.jvm.internal.calls.CallerImpl$Method$Instance.call(CallerImpl.kt:113) ~[kotlin-reflect-2.1.20.jar!/:2.1.20-release-217]
+	at kotlin.reflect.jvm.internal.KCallableImpl.callDefaultMethod$kotlin_reflection(KCallableImpl.kt:207) ~[kotlin-reflect-2.1.20.jar!/:2.1.20-release-217]
+	at kotlin.reflect.jvm.internal.KCallableImpl.callBy(KCallableImpl.kt:112) ~[kotlin-reflect-2.1.20.jar!/:2.1.20-release-217]
+	at org.springframework.web.method.support.InvocableHandlerMethod$KotlinDelegate.invokeFunction(InvocableHandlerMethod.java:334) ~[spring-web-6.1.15.jar!/:6.1.15]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:252) ~[spring-web-6.1.15.jar!/:6.1.15]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:188) ~[spring-web-6.1.15.jar!/:6.1.15]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118) ~[spring-webmvc-6.1.8.jar!/:6.1.8]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:926) ~[spring-webmvc-6.1.8.jar!/:6.1.8]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:831) ~[spring-webmvc-6.1.8.jar!/:6.1.8]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-6.1.8.jar!/:6.1.8]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089) ~[spring-webmvc-6.1.8.jar!/:6.1.8]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979) ~[spring-webmvc-6.1.8.jar!/:6.1.8]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014) ~[spring-webmvc-6.1.8.jar!/:6.1.8]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903) ~[spring-webmvc-6.1.8.jar!/:6.1.8]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:527) ~[jakarta.servlet-api-6.0.0.jar!/:6.0.0]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885) ~[spring-webmvc-6.1.8.jar!/:6.1.8]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:614) ~[jakarta.servlet-api-6.0.0.jar!/:6.0.0]
+	at io.undertow.servlet.handlers.ServletHandler.handleRequest(ServletHandler.java:74) ~[undertow-servlet-2.3.13.Final.jar!/:2.3.13.Final]
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:129) ~[undertow-servlet-2.3.13.Final.jar!/:2.3.13.Final]
+	at org.springframework.web.filter.AbstractRequestLoggingFilter.doFilterInternal(AbstractRequestLoggingFilter.java:289) ~[spring-web-6.1.15.jar!/:6.1.15]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.15.jar!/:6.1.15]
+	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:67) ~[undertow-servlet-2.3.13.Final.jar!/:2.3.13.Final]
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131) ~[undertow-servlet-2.3.13.Final.jar!/:2.3.13.Final]
+	at lavalink.server.io.ResponseHeaderFilter.doFilterInternal(ResponseHeaderFilter.kt:17) ~[classes!/:4.2.2]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.15.jar!/:6.1.15]
+	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:67) ~[undertow-servlet-2.3.13.Final.jar!/:2.3.13.Final]
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131) ~[undertow-servlet-2.3.13.Final.jar!/:2.3.13.Final]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-6.1.15.jar!/:6.1.15]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.15.jar!/:6.1.15]
+	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:67) ~[undertow-servlet-2.3.13.Final.jar!/:2.3.13.Final]
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131) ~[undertow-servlet-2.3.13.Final.jar!/:2.3.13.Final]
+	at io.undertow.servlet.handlers.FilterHandler.handleRequest(FilterHandler.java:84) ~[undertow-servlet-2.3.13.Final.jar!/:2.3.13.Final]
+	at io.undertow.servlet.handlers.security.ServletSecurityRoleHandler.handleRequest(ServletSecurityRoleHandler.java:62) ~[undertow-servlet-2.3.13.Final.jar!/:2.3.13.Final]
+	at io.undertow.servlet.handlers.ServletChain$1.handleRequest(ServletChain.java:68) ~[undertow-servlet-2.3.13.Final.jar!/:2.3.13.Final]
+	at io.undertow.servlet.handlers.ServletDispatchingHandler.handleRequest(ServletDispatchingHandler.java:36) ~[undertow-servlet-2.3.13.Final.jar!/:2.3.13.Final]
+	at io.undertow.servlet.handlers.RedirectDirHandler.handleRequest(RedirectDirHandler.java:68) ~[undertow-servlet-2.3.13.Final.jar!/:2.3.13.Final]
+	at io.undertow.servlet.handlers.security.SSLInformationAssociationHandler.handleRequest(SSLInformationAssociationHandler.java:117) ~[undertow-servlet-2.3.13.Final.jar!/:2.3.13.Final]
+	at io.undertow.servlet.handlers.security.ServletAuthenticationCallHandler.handleRequest(ServletAuthenticationCallHandler.java:57) ~[undertow-servlet-2.3.13.Final.jar!/:2.3.13.Final]
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43) ~[undertow-core-2.3.13.Final.jar!/:2.3.13.Final]
+	at io.undertow.security.handlers.AbstractConfidentialityHandler.handleRequest(AbstractConfidentialityHandler.java:46) ~[undertow-core-2.3.13.Final.jar!/:2.3.13.Final]
+	at io.undertow.servlet.handlers.security.ServletConfidentialityConstraintHandler.handleRequest(ServletConfidentialityConstraintHandler.java:64) ~[undertow-servlet-2.3.13.Final.jar!/:2.3.13.Final]
+	at io.undertow.security.handlers.AuthenticationMechanismsHandler.handleRequest(AuthenticationMechanismsHandler.java:60) ~[undertow-core-2.3.13.Final.jar!/:2.3.13.Final]
+	at io.undertow.servlet.handlers.security.CachedAuthenticatedSessionHandler.handleRequest(CachedAuthenticatedSessionHandler.java:77) ~[undertow-servlet-2.3.13.Final.jar!/:2.3.13.Final]
+	at io.undertow.security.handlers.AbstractSecurityContextAssociationHandler.handleRequest(AbstractSecurityContextAssociationHandler.java:43) ~[undertow-core-2.3.13.Final.jar!/:2.3.13.Final]
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43) ~[undertow-core-2.3.13.Final.jar!/:2.3.13.Final]
+	at io.undertow.servlet.handlers.SendErrorPageHandler.handleRequest(SendErrorPageHandler.java:52) ~[undertow-servlet-2.3.13.Final.jar!/:2.3.13.Final]
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43) ~[undertow-core-2.3.13.Final.jar!/:2.3.13.Final]
+	at io.undertow.servlet.handlers.ServletInitialHandler.handleFirstRequest(ServletInitialHandler.java:276) ~[undertow-servlet-2.3.13.Final.jar!/:2.3.13.Final]
+	at io.undertow.servlet.handlers.ServletInitialHandler$2.call(ServletInitialHandler.java:135) ~[undertow-servlet-2.3.13.Final.jar!/:2.3.13.Final]
+	at io.undertow.servlet.handlers.ServletInitialHandler$2.call(ServletInitialHandler.java:132) ~[undertow-servlet-2.3.13.Final.jar!/:2.3.13.Final]
+	at io.undertow.servlet.core.ServletRequestContextThreadSetupAction$1.call(ServletRequestContextThreadSetupAction.java:48) ~[undertow-servlet-2.3.13.Final.jar!/:2.3.13.Final]
+	at io.undertow.servlet.core.ContextClassLoaderSetupAction$1.call(ContextClassLoaderSetupAction.java:43) ~[undertow-servlet-2.3.13.Final.jar!/:2.3.13.Final]
+	at io.undertow.servlet.handlers.ServletInitialHandler.dispatchRequest(ServletInitialHandler.java:256) ~[undertow-servlet-2.3.13.Final.jar!/:2.3.13.Final]
+	at io.undertow.servlet.handlers.ServletInitialHandler$1.handleRequest(ServletInitialHandler.java:101) ~[undertow-servlet-2.3.13.Final.jar!/:2.3.13.Final]
+	at io.undertow.server.Connectors.executeRootHandler(Connectors.java:393) ~[undertow-core-2.3.13.Final.jar!/:2.3.13.Final]
+	at io.undertow.server.HttpServerExchange$1.run(HttpServerExchange.java:859) ~[undertow-core-2.3.13.Final.jar!/:2.3.13.Final]
+	at org.jboss.threads.ContextHandler$1.runWith(ContextHandler.java:18) ~[jboss-threads-3.5.0.Final.jar!/:3.5.0.Final]
+	at org.jboss.threads.EnhancedQueueExecutor$Task.run(EnhancedQueueExecutor.java:2513) ~[jboss-threads-3.5.0.Final.jar!/:3.5.0.Final]
+	at org.jboss.threads.EnhancedQueueExecutor$ThreadBody.run(EnhancedQueueExecutor.java:1538) ~[jboss-threads-3.5.0.Final.jar!/:3.5.0.Final]
+	at org.xnio.XnioWorker$WorkerThreadFactory$1$1.run(XnioWorker.java:1282) ~[xnio-api-3.8.8.Final.jar!/:3.8.8.Final]
+	at java.base/java.lang.Thread.run(Unknown Source) ~[na:na]
+Caused by: com.sedmelluq.discord.lavaplayer.tools.FriendlyException: Server responded with an error.
+	at com.github.topi314.lavasrc.LavaSrcTools.fetchResponseAsJson(LavaSrcTools.java:39) ~[lavasrc-plugin-4.8.3.jar!/:na]
+	at com.github.topi314.lavasrc.spotify.SpotifySourceManager.getJson(SpotifySourceManager.java:306) ~[lavasrc-plugin-4.8.3.jar!/:na]
+	at com.github.topi314.lavasrc.spotify.SpotifySourceManager.getSearch(SpotifySourceManager.java:388) ~[lavasrc-plugin-4.8.3.jar!/:na]
+	at com.github.topi314.lavasrc.spotify.SpotifySourceManager.loadItem(SpotifySourceManager.java:256) ~[lavasrc-plugin-4.8.3.jar!/:na]
+	at com.github.topi314.lavasrc.spotify.SpotifySourceManager.loadItem(SpotifySourceManager.java:250) ~[lavasrc-plugin-4.8.3.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.player.DefaultAudioPlayerManager.checkSourcesForItemOnce(DefaultAudioPlayerManager.java:442) ~[lavaplayer-2.2.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.player.DefaultAudioPlayerManager.checkSourcesForItem(DefaultAudioPlayerManager.java:423) ~[lavaplayer-2.2.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.player.DefaultAudioPlayerManager.loadItemSync(DefaultAudioPlayerManager.java:154) ~[lavaplayer-2.2.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.player.AudioPlayerManager.loadItemSync(AudioPlayerManager.java:127) ~[lavaplayer-2.2.6.jar!/:na]
+	at lavalink.server.util.LoadingKt.loadAudioItem(loading.kt:15) ~[classes!/:4.2.2]
+	... 65 common frames omitted
+Caused by: java.lang.IllegalStateException: Response code from channel info is 403
+	... 75 common frames omitted
+
+2026-07-03T02:09:01.792Z  INFO 1 --- [Lavalink] [  XNIO-1 task-2] l.server.io.RequestLoggingFilter         : GET /v4/loadtracks?identifier=spsearch%3Ahttps%3A%2F%2Fopen.spotify.com%2Fplaylist%2F37i9dQZF1E8JuTpPiqjZ12%3Fsi%3D2517fa855fd7488a
+2026-07-03T02:09:03.070Z  INFO 1 --- [Lavalink] [  XNIO-1 task-2] l.server.player.AudioLoaderRestHandler   : Got request to load for identifier "https://open.spotify.com/playlist/37i9dQZF1E8JuTpPiqjZ12?si=2517fa855fd7488a"
+2026-07-03T02:09:03.070Z ERROR 1 --- [Lavalink] [  XNIO-1 task-2] l.server.player.AudioLoaderRestHandler   : Failed to load track for identifier https://open.spotify.com/playlist/37i9dQZF1E8JuTpPiqjZ12?si=2517fa855fd7488a
+
+com.sedmelluq.discord.lavaplayer.tools.FriendlyException: Something went wrong while looking up the track.
+	at lavalink.server.util.LoadingKt.loadAudioItem(loading.kt:20) ~[classes!/:4.2.2]
+	at lavalink.server.player.AudioLoaderRestHandler.loadTracks(AudioLoaderRestHandler.kt:59) ~[classes!/:4.2.2]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(Unknown Source) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Unknown Source) ~[na:na]
+	at kotlin.reflect.jvm.internal.calls.CallerImpl$Method.callMethod(CallerImpl.kt:97) ~[kotlin-reflect-2.1.20.jar!/:2.1.20-release-217]
+	at kotlin.reflect.jvm.internal.calls.CallerImpl$Method$Instance.call(CallerImpl.kt:113) ~[kotlin-reflect-2.1.20.jar!/:2.1.20-release-217]
+	at kotlin.reflect.jvm.internal.KCallableImpl.callDefaultMethod$kotlin_reflection(KCallableImpl.kt:207) ~[kotlin-reflect-2.1.20.jar!/:2.1.20-release-217]
+	at kotlin.reflect.jvm.internal.KCallableImpl.callBy(KCallableImpl.kt:112) ~[kotlin-reflect-2.1.20.jar!/:2.1.20-release-217]
+	at org.springframework.web.method.support.InvocableHandlerMethod$KotlinDelegate.invokeFunction(InvocableHandlerMethod.java:334) ~[spring-web-6.1.15.jar!/:6.1.15]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:252) ~[spring-web-6.1.15.jar!/:6.1.15]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:188) ~[spring-web-6.1.15.jar!/:6.1.15]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118) ~[spring-webmvc-6.1.8.jar!/:6.1.8]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:926) ~[spring-webmvc-6.1.8.jar!/:6.1.8]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:831) ~[spring-webmvc-6.1.8.jar!/:6.1.8]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-6.1.8.jar!/:6.1.8]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089) ~[spring-webmvc-6.1.8.jar!/:6.1.8]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979) ~[spring-webmvc-6.1.8.jar!/:6.1.8]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014) ~[spring-webmvc-6.1.8.jar!/:6.1.8]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903) ~[spring-webmvc-6.1.8.jar!/:6.1.8]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:527) ~[jakarta.servlet-api-6.0.0.jar!/:6.0.0]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885) ~[spring-webmvc-6.1.8.jar!/:6.1.8]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:614) ~[jakarta.servlet-api-6.0.0.jar!/:6.0.0]
+	at io.undertow.servlet.handlers.ServletHandler.handleRequest(ServletHandler.java:74) ~[undertow-servlet-2.3.13.Final.jar!/:2.3.13.Final]
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:129) ~[undertow-servlet-2.3.13.Final.jar!/:2.3.13.Final]
+	at org.springframework.web.filter.AbstractRequestLoggingFilter.doFilterInternal(AbstractRequestLoggingFilter.java:289) ~[spring-web-6.1.15.jar!/:6.1.15]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.15.jar!/:6.1.15]
+	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:67) ~[undertow-servlet-2.3.13.Final.jar!/:2.3.13.Final]
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131) ~[undertow-servlet-2.3.13.Final.jar!/:2.3.13.Final]
+	at lavalink.server.io.ResponseHeaderFilter.doFilterInternal(ResponseHeaderFilter.kt:17) ~[classes!/:4.2.2]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.15.jar!/:6.1.15]
+	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:67) ~[undertow-servlet-2.3.13.Final.jar!/:2.3.13.Final]
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131) ~[undertow-servlet-2.3.13.Final.jar!/:2.3.13.Final]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-6.1.15.jar!/:6.1.15]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.15.jar!/:6.1.15]
+	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:67) ~[undertow-servlet-2.3.13.Final.jar!/:2.3.13.Final]
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131) ~[undertow-servlet-2.3.13.Final.jar!/:2.3.13.Final]
+	at io.undertow.servlet.handlers.FilterHandler.handleRequest(FilterHandler.java:84) ~[undertow-servlet-2.3.13.Final.jar!/:2.3.13.Final]
+	at io.undertow.servlet.handlers.security.ServletSecurityRoleHandler.handleRequest(ServletSecurityRoleHandler.java:62) ~[undertow-servlet-2.3.13.Final.jar!/:2.3.13.Final]
+	at io.undertow.servlet.handlers.ServletChain$1.handleRequest(ServletChain.java:68) ~[undertow-servlet-2.3.13.Final.jar!/:2.3.13.Final]
+	at io.undertow.servlet.handlers.ServletDispatchingHandler.handleRequest(ServletDispatchingHandler.java:36) ~[undertow-servlet-2.3.13.Final.jar!/:2.3.13.Final]
+	at io.undertow.servlet.handlers.RedirectDirHandler.handleRequest(RedirectDirHandler.java:68) ~[undertow-servlet-2.3.13.Final.jar!/:2.3.13.Final]
+	at io.undertow.servlet.handlers.security.SSLInformationAssociationHandler.handleRequest(SSLInformationAssociationHandler.java:117) ~[undertow-servlet-2.3.13.Final.jar!/:2.3.13.Final]
+	at io.undertow.servlet.handlers.security.ServletAuthenticationCallHandler.handleRequest(ServletAuthenticationCallHandler.java:57) ~[undertow-servlet-2.3.13.Final.jar!/:2.3.13.Final]
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43) ~[undertow-core-2.3.13.Final.jar!/:2.3.13.Final]
+	at io.undertow.security.handlers.AbstractConfidentialityHandler.handleRequest(AbstractConfidentialityHandler.java:46) ~[undertow-core-2.3.13.Final.jar!/:2.3.13.Final]
+	at io.undertow.servlet.handlers.security.ServletConfidentialityConstraintHandler.handleRequest(ServletConfidentialityConstraintHandler.java:64) ~[undertow-servlet-2.3.13.Final.jar!/:2.3.13.Final]
+	at io.undertow.security.handlers.AuthenticationMechanismsHandler.handleRequest(AuthenticationMechanismsHandler.java:60) ~[undertow-core-2.3.13.Final.jar!/:2.3.13.Final]
+	at io.undertow.servlet.handlers.security.CachedAuthenticatedSessionHandler.handleRequest(CachedAuthenticatedSessionHandler.java:77) ~[undertow-servlet-2.3.13.Final.jar!/:2.3.13.Final]
+	at io.undertow.security.handlers.AbstractSecurityContextAssociationHandler.handleRequest(AbstractSecurityContextAssociationHandler.java:43) ~[undertow-core-2.3.13.Final.jar!/:2.3.13.Final]
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43) ~[undertow-core-2.3.13.Final.jar!/:2.3.13.Final]
+	at io.undertow.servlet.handlers.SendErrorPageHandler.handleRequest(SendErrorPageHandler.java:52) ~[undertow-servlet-2.3.13.Final.jar!/:2.3.13.Final]
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43) ~[undertow-core-2.3.13.Final.jar!/:2.3.13.Final]
+	at io.undertow.servlet.handlers.ServletInitialHandler.handleFirstRequest(ServletInitialHandler.java:276) ~[undertow-servlet-2.3.13.Final.jar!/:2.3.13.Final]
+	at io.undertow.servlet.handlers.ServletInitialHandler$2.call(ServletInitialHandler.java:135) ~[undertow-servlet-2.3.13.Final.jar!/:2.3.13.Final]
+	at io.undertow.servlet.handlers.ServletInitialHandler$2.call(ServletInitialHandler.java:132) ~[undertow-servlet-2.3.13.Final.jar!/:2.3.13.Final]
+	at io.undertow.servlet.core.ServletRequestContextThreadSetupAction$1.call(ServletRequestContextThreadSetupAction.java:48) ~[undertow-servlet-2.3.13.Final.jar!/:2.3.13.Final]
+	at io.undertow.servlet.core.ContextClassLoaderSetupAction$1.call(ContextClassLoaderSetupAction.java:43) ~[undertow-servlet-2.3.13.Final.jar!/:2.3.13.Final]
+	at io.undertow.servlet.handlers.ServletInitialHandler.dispatchRequest(ServletInitialHandler.java:256) ~[undertow-servlet-2.3.13.Final.jar!/:2.3.13.Final]
+	at io.undertow.servlet.handlers.ServletInitialHandler$1.handleRequest(ServletInitialHandler.java:101) ~[undertow-servlet-2.3.13.Final.jar!/:2.3.13.Final]
+	at io.undertow.server.Connectors.executeRootHandler(Connectors.java:393) ~[undertow-core-2.3.13.Final.jar!/:2.3.13.Final]
+	at io.undertow.server.HttpServerExchange$1.run(HttpServerExchange.java:859) ~[undertow-core-2.3.13.Final.jar!/:2.3.13.Final]
+	at org.jboss.threads.ContextHandler$1.runWith(ContextHandler.java:18) ~[jboss-threads-3.5.0.Final.jar!/:3.5.0.Final]
+	at org.jboss.threads.EnhancedQueueExecutor$Task.run(EnhancedQueueExecutor.java:2513) ~[jboss-threads-3.5.0.Final.jar!/:3.5.0.Final]
+	at org.jboss.threads.EnhancedQueueExecutor$ThreadBody.run(EnhancedQueueExecutor.java:1538) ~[jboss-threads-3.5.0.Final.jar!/:3.5.0.Final]
+	at org.xnio.XnioWorker$WorkerThreadFactory$1$1.run(XnioWorker.java:1282) ~[xnio-api-3.8.8.Final.jar!/:3.8.8.Final]
+	at java.base/java.lang.Thread.run(Unknown Source) ~[na:na]
+Caused by: com.sedmelluq.discord.lavaplayer.tools.FriendlyException: Spotify generated playlists are no longer accessible via anonymous tokens.
+	at com.github.topi314.lavasrc.spotify.SpotifySourceManager.getPlaylist(SpotifySourceManager.java:544) ~[lavasrc-plugin-4.8.3.jar!/:na]
+	at com.github.topi314.lavasrc.spotify.SpotifySourceManager.loadItem(SpotifySourceManager.java:292) ~[lavasrc-plugin-4.8.3.jar!/:na]
+	at com.github.topi314.lavasrc.spotify.SpotifySourceManager.loadItem(SpotifySourceManager.java:250) ~[lavasrc-plugin-4.8.3.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.player.DefaultAudioPlayerManager.checkSourcesForItemOnce(DefaultAudioPlayerManager.java:442) ~[lavaplayer-2.2.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.player.DefaultAudioPlayerManager.checkSourcesForItem(DefaultAudioPlayerManager.java:423) ~[lavaplayer-2.2.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.player.DefaultAudioPlayerManager.loadItemSync(DefaultAudioPlayerManager.java:154) ~[lavaplayer-2.2.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.player.AudioPlayerManager.loadItemSync(AudioPlayerManager.java:127) ~[lavaplayer-2.2.6.jar!/:na]
+	at lavalink.server.util.LoadingKt.loadAudioItem(loading.kt:15) ~[classes!/:4.2.2]
+	... 65 common frames omitted
+
+2026-07-03T02:09:03.072Z  INFO 1 --- [Lavalink] [  XNIO-1 task-2] l.server.io.RequestLoggingFilter         : GET /v4/loadtracks?identifier=https%3A%2F%2Fopen.spotify.com%2Fplaylist%2F37i9dQZF1E8JuTpPiqjZ12%3Fsi%3D2517fa855fd7488a
+2026-07-03T02:09:07.897Z  INFO 1 --- [Lavalink] [  XNIO-1 task-2] l.server.io.RequestLoggingFilter         : GET /version
+2026-07-03T02:09:17.927Z  INFO 1 --- [Lavalink] [  XNIO-1 task-2] l.server.io.RequestLoggingFilter         : GET /version
