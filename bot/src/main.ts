@@ -145,7 +145,7 @@ async function bootstrap(): Promise<void> {
   // ── Graceful Shutdown ────────────────────────────────────────
   const shutdown = (signal: string) => {
     logger.info(`Received ${signal}, shutting down...`);
-    client.destroy();
+    void client.destroy();
     process.exit(0);
   };
 
