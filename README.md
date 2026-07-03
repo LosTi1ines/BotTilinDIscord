@@ -24,13 +24,21 @@ de modo que la extracción de audio vive en un servidor dedicado y actualizable
 
 Dos servicios orquestados con Docker Compose:
 
-```
-┌─────────────────┐   WebSocket / REST   ┌──────────────────────┐
-│  bot (Node.js)  │ ───────────────────► │  Lavalink v4 (Java)  │
-│  discord.js 14  │                      │  · youtube-source    │
-│  Shoukaku 4     │                      │  · LavaSrc (Spotify) │
-└─────────────────┘                      └──────────────────────┘
-   plano de control                          plano de datos (audio)
+```mermaid
+flowchart LR
+    discord(("Discord"))
+
+    subgraph control["Plano de control"]
+        bot["bot — Node.js<br>discord.js 14 · Shoukaku 4"]
+    end
+
+    subgraph datos["Plano de datos (audio)"]
+        lavalink["Lavalink v4 — Java<br>youtube-source · LavaSrc"]
+    end
+
+    bot <-- "gateway / slash commands" --> discord
+    bot -- "WebSocket / REST" --> lavalink
+    lavalink -- "stream de voz" --> discord
 ```
 
 El bot sigue una arquitectura por capas (dominio → aplicación → infraestructura →
