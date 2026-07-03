@@ -80,7 +80,7 @@ export function buildAddedEmbed(track: Track, position: number): EmbedBuilder {
     .setFooter({ text: 'Bot Music • Usa /queue para ver la cola completa' });
 }
 
-export function buildPlaylistEmbed(name: string, count: number, first: Track): EmbedBuilder {
+export function buildPlaylistEmbed(name: string, count: number, first: Track, truncated = false): EmbedBuilder {
   return new EmbedBuilder()
     .setColor(COLOR_PLAYLIST)
     .setAuthor({ name: '📂 Playlist añadida a la cola' })
@@ -90,7 +90,11 @@ export function buildPlaylistEmbed(name: string, count: number, first: Track): E
       { name: '🎵 Tracks', value: `${count}`, inline: true },
       { name: '▶ Primero', value: first.info.title, inline: true },
     )
-    .setFooter({ text: 'Bot Music • Reproduciendo ahora el primer track' });
+    .setFooter({
+      text: truncated
+        ? 'Bot Music • Playlist truncada al límite de 600 canciones'
+        : 'Bot Music • Reproduciendo ahora el primer track',
+    });
 }
 
 export function buildQueueEmbed(

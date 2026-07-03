@@ -51,6 +51,7 @@ services:
       # Credenciales Spotify pasadas al plugin lavasrc
       - SPOTIFY_CLIENT_ID=${SPOTIFY_CLIENT_ID}
       - SPOTIFY_CLIENT_SECRET=${SPOTIFY_CLIENT_SECRET}
+      - SPOTIFY_SP_DC=${SPOTIFY_SP_DC}
       # Credenciales opcionales para automatización de YouTube OAuth
       - YOUTUBE_OAUTH_REFRESH_TOKEN=${YOUTUBE_OAUTH_REFRESH_TOKEN}
       - YOUTUBE_OAUTH_SKIP_INITIALIZATION=${YOUTUBE_OAUTH_SKIP_INITIALIZATION}

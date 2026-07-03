@@ -8,3 +8,4 @@ export type { IMusicPlayerPort, LoadResult, RawTrack, PlaylistMetadata } from '.
 export type { IQueueManager } from './QueueManagerPort.js';
 export type { ILogger, LogContext } from './LoggerPort.js';
 export { LogLevel } from './LoggerPort.js';
+export type { ISpotifyPlaylistPort, SpotifyResolvedTrack, SpotifyPlaylistResult } from './SpotifyPlaylistPort.js';

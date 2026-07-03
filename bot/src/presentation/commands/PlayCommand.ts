@@ -69,7 +69,7 @@ export async function execute(
   }
 
   if (result.type === 'playlist') {
-    await interaction.editReply({ embeds: [buildPlaylistEmbed(result.name, result.count, result.first)] });
+    await interaction.editReply({ embeds: [buildPlaylistEmbed(result.name, result.count, result.first, result.truncated)] });
     return;
   }
 

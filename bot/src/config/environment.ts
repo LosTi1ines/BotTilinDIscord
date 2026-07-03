@@ -30,6 +30,10 @@ export interface AppConfig {
   spotify: {
     clientId: string;
     clientSecret: string;
+    // Opcionales: solo necesarios para /play de playlists de Spotify
+    // (requiere OAuth2 de usuario — ver scripts/spotify-login.ts).
+    userRefreshToken: string | null;
+    redirectUri: string;
   };
 
   // ── Bot Settings ─────────────────────────────────────────
@@ -117,6 +121,8 @@ function loadEnvironment(): AppConfig {
     spotify: {
       clientId: process.env.SPOTIFY_CLIENT_ID!,
       clientSecret: process.env.SPOTIFY_CLIENT_SECRET!,
+      userRefreshToken: process.env.SPOTIFY_USER_REFRESH_TOKEN ?? null,
+      redirectUri: process.env.SPOTIFY_REDIRECT_URI ?? 'http://127.0.0.1:8888/callback',
     },
     bot: {
       defaultVolume,

@@ -7,6 +7,7 @@ import { InMemoryQueueManager } from './infrastructure/state/InMemoryQueueManage
 import { GuildStateStore } from './infrastructure/state/GuildStateStore.js';
 import { LavalinkAdapter } from './infrastructure/lavalink/LavalinkAdapter.js';
 import { LavalinkEventHandler } from './infrastructure/lavalink/LavalinkEventHandler.js';
+import { SpotifyUserAuthAdapter } from './infrastructure/spotify/SpotifyUserAuthAdapter.js';
 import { PlayTrackUseCase } from './application/PlayTrackUseCase.js';
 import { SkipTrackUseCase } from './application/SkipTrackUseCase.js';
 import { PauseResumeUseCase } from './application/PauseResumeUseCase.js';
@@ -48,6 +49,12 @@ async function bootstrap(): Promise<void> {
   const queueManager = new InMemoryQueueManager();
   const guildStateStore = new GuildStateStore();
   const lavalinkAdapter = new LavalinkAdapter(shoukaku, logger);
+  const spotifyPlaylistAdapter = new SpotifyUserAuthAdapter(
+    config.spotify.clientId,
+    config.spotify.clientSecret,
+    config.spotify.userRefreshToken ?? '',
+    logger,
+  );
 
   // ── Event Handler (auto-advance queue + nowPlaying events) ───
   const eventHandler = new LavalinkEventHandler(
@@ -95,7 +102,7 @@ async function bootstrap(): Promise<void> {
 
   // ── Use Cases ────────────────────────────────────────────────
   const ctx: BotContext = {
-    playTrack: new PlayTrackUseCase(lavalinkAdapter, queueManager, logger, guildStateStore),
+    playTrack: new PlayTrackUseCase(lavalinkAdapter, queueManager, logger, guildStateStore, spotifyPlaylistAdapter),
     skipTrack: new SkipTrackUseCase(lavalinkAdapter, queueManager, logger),
     pauseResume: new PauseResumeUseCase(lavalinkAdapter, queueManager, logger),
     stop: new StopUseCase(lavalinkAdapter, queueManager, logger),

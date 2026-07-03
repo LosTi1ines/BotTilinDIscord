@@ -75,6 +75,9 @@ plugins:
       countryCode: "CL"
       playlistLoadLimit: 6    # 6 páginas × 100 = máx 600 tracks
       albumLoadLimit: 6
+      # Spotify restringió /v1/artists para apps en Development Mode (403 Forbidden).
+      # Esta llamada solo decoraba resultados de búsqueda con la imagen del artista; no es esencial.
+      resolveArtistsInSearch: false
 
   # ── youtube: Sesiones seguras con OAuth ──
   youtube:

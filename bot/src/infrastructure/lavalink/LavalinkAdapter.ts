@@ -34,9 +34,40 @@ function buildFilters(filters: AudioFilters): FilterOptions {
   };
 }
 
+// ── Rate limiter para búsquedas de Spotify ─────────────────────────
+// Spotify puede marcar como abuso ráfagas de peticiones (ej: autocompletado
+// disparando una búsqueda por cada tecla escrita por varios usuarios a la vez).
+// Serializa esas peticiones con un espaciado mínimo entre ellas.
+
+class SpotifyRateLimiter {
+  private queue: Promise<void> = Promise.resolve();
+  private lastRequestAt = 0;
+
+  constructor(private readonly minIntervalMs: number) {}
+
+  acquire(): Promise<void> {
+    this.queue = this.queue.then(() => this.waitTurn());
+    return this.queue;
+  }
+
+  private async waitTurn(): Promise<void> {
+    const wait = this.lastRequestAt + this.minIntervalMs - Date.now();
+    if (wait > 0) await new Promise(resolve => setTimeout(resolve, wait));
+    this.lastRequestAt = Date.now();
+  }
+}
+
+function isSpotifyQuery(query: string): boolean {
+  return query.startsWith('spsearch:')
+    || query.includes('open.spotify.com')
+    || query.startsWith('spotify:');
+}
+
 // ── Adapter ──────────────────────────────────────────────────────
 
 export class LavalinkAdapter extends EventEmitter implements IMusicPlayerPort {
+  private readonly spotifyRateLimiter = new SpotifyRateLimiter(300);
+
   constructor(
     private readonly shoukaku: Shoukaku,
     private readonly logger: ILogger,
@@ -153,6 +184,10 @@ export class LavalinkAdapter extends EventEmitter implements IMusicPlayerPort {
   }
 
   async loadTracks(query: string): Promise<LoadResult> {
+    if (isSpotifyQuery(query)) {
+      await this.spotifyRateLimiter.acquire();
+    }
+
     const node = [...this.shoukaku.nodes.values()]
       .find(n => n.state === Constants.State.CONNECTED);
     if (!node) throw new Error('No connected Lavalink nodes');
