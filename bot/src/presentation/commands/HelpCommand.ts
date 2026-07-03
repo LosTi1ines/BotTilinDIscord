@@ -1,4 +1,4 @@
-import { SlashCommandBuilder, EmbedBuilder } from 'discord.js';
+import { SlashCommandBuilder, EmbedBuilder, MessageFlags } from 'discord.js';
 import type { ChatInputCommandInteraction } from 'discord.js';
 import type { BotContext } from './index.js';
 
@@ -59,5 +59,5 @@ export async function execute(
     .setFooter({ text: 'Bot Music • Usa /play para comenzar a reproducir música' })
     .setTimestamp();
 
-  await interaction.reply({ embeds: [embed], ephemeral: true });
+  await interaction.reply({ embeds: [embed], flags: MessageFlags.Ephemeral });
 }

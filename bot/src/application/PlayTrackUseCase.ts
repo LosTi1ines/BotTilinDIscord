@@ -98,10 +98,23 @@ export class PlayTrackUseCase {
   /**
    * Búsqueda paralela en YouTube y Spotify para el autocompletado del comando /play.
    * Devuelve hasta 3 resultados de YouTube y 2 de Spotify (5 en total).
+   * Implementa una caché interna para evitar rate-limits (HTTP 403).
    */
-  async searchForAutocomplete(query: string): Promise<AutocompleteTrack[]> {
-    if (!query || query.length < 2) return [];
+  private readonly autocompleteCache = new Map<string, { tracks: AutocompleteTrack[]; expiresAt: number }>();
+  private readonly CACHE_TTL_MS = 5 * 60 * 1000; // 5 minutos de caché
 
+  async searchForAutocomplete(query: string): Promise<AutocompleteTrack[]> {
+    const cleanQuery = query.trim().toLowerCase();
+    if (!cleanQuery || cleanQuery.length < 2) return [];
+
+    // 1. Intentar servir desde la caché en memoria si no ha expirado
+    const cached = this.autocompleteCache.get(cleanQuery);
+    if (cached && cached.expiresAt > Date.now()) {
+      this.logger.debug('Serving autocomplete from cache', { query: cleanQuery });
+      return cached.tracks;
+    }
+
+    // 2. Realizar búsquedas en paralelo (YouTube + Spotify)
     const [ytResult, spResult] = await Promise.allSettled([
       this.player.loadTracks(`ytsearch:${query}`),
       this.player.loadTracks(`spsearch:${query}`),
@@ -129,6 +142,14 @@ export class PlayTrackUseCase {
           source: 'spotify',
         });
       }
+    }
+
+    // 3. Guardar en caché si obtuvimos resultados para proteger las APIs
+    if (tracks.length > 0) {
+      this.autocompleteCache.set(cleanQuery, {
+        tracks,
+        expiresAt: Date.now() + this.CACHE_TTL_MS,
+      });
     }
 
     return tracks;

@@ -1,0 +1,13 @@
+{"level":30,"time":1783042071165,"pid":1,"hostname":"7d9566b3e84a","env":"production","msg":"Starting Discord Music Bot"}
+{"level":30,"time":1783042072252,"pid":1,"hostname":"7d9566b3e84a","tag":"Bot music#7207","guilds":1,"msg":"Bot online"}
+{"level":30,"time":1783042072259,"pid":1,"hostname":"7d9566b3e84a","node":"main","msg":"Lavalink node connected"}
+{"level":30,"time":1783042072535,"pid":1,"hostname":"7d9566b3e84a","guildId":"397085993901096970","count":8,"msg":"Slash commands registered (guild)"}
+{"level":30,"time":1783043187631,"pid":1,"hostname":"7d9566b3e84a","guildId":"397085993901096970","msg":"Inactivity timeout, disconnecting"}
+{"level":40,"time":1783043187645,"pid":1,"hostname":"7d9566b3e84a","guildId":"397085993901096970","code":1000,"msg":"Voice connection closed"}
+{"level":30,"time":1783043294410,"pid":1,"hostname":"7d9566b3e84a","msg":"Received SIGTERM, shutting down..."}
+{"level":30,"time":1783043384829,"pid":1,"hostname":"7d9566b3e84a","env":"production","msg":"Starting Discord Music Bot"}
+{"level":30,"time":1783043386365,"pid":1,"hostname":"7d9566b3e84a","tag":"Bot music#7207","guilds":1,"msg":"Bot online"}
+(node:1) Warning: Supplying "ephemeral" for interaction response options is deprecated. Utilize flags instead.
+{"level":50,"time":1783043386367,"pid":1,"hostname":"7d9566b3e84a","err":{"type":"Error","message":"connect ECONNREFUSED 172.18.0.3:2333","stack":"Error: connect ECONNREFUSED 172.18.0.3:2333\n    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1638:16)","errno":-111,"code":"ECONNREFUSED","syscall":"connect","address":"172.18.0.3","port":2333},"node":"main","msg":"Lavalink node error"}
+{"level":30,"time":1783043386722,"pid":1,"hostname":"7d9566b3e84a","guildId":"397085993901096970","count":8,"msg":"Slash commands registered (guild)"}
+(Use `node --trace-warnings ...` to show where the warning was created)
