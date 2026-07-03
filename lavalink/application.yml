@@ -82,10 +82,10 @@ plugins:
     allowDirectVideoIds: true
     allowDirectPlaylistIds: true
     clients:
-      - "MUSIC"                # YouTube Music (prioridad para audio musical)
-      - "WEB"                  # Fallback: cliente web estándar
-      - "TV"                   # Compatible con OAuth (v1.18.1)
-      - "ANDROID_VR"           # Compatible con OAuth (v1.18.1)
+      - "TV"                   # OAuth compatible — sesiones seguras con token
+      - "ANDROID_VR"           # OAuth compatible — fallback inmediato
+      - "MUSIC"                # YouTube Music — sin OAuth, para búsquedas
+      - "WEB"                  # Web estándar — último recurso
     # ── Autenticación OAuth ──
     # Al primer arranque, Lavalink imprimirá un enlace OAuth en los logs.
     # Sigue las instrucciones para autorizar con una cuenta de Google.

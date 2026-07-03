@@ -1,3 +1,4 @@
+import { EventEmitter } from 'node:events';
 import type { ILogger } from '../../domain/ports/LoggerPort.js';
 import type { IMusicPlayerPort } from '../../domain/ports/MusicPlayerPort.js';
 import type { IQueueManager } from '../../domain/ports/QueueManagerPort.js';
@@ -5,7 +6,7 @@ import type { LavalinkAdapter } from './LavalinkAdapter.js';
 
 const SKIP_REASONS = new Set(['REPLACED', 'STOPPED', 'CLEANUP']);
 
-export class LavalinkEventHandler {
+export class LavalinkEventHandler extends EventEmitter {
   private readonly inactivityTimers = new Map<string, ReturnType<typeof setTimeout>>();
 
   constructor(
@@ -15,6 +16,8 @@ export class LavalinkEventHandler {
     private readonly logger: ILogger,
     private readonly inactivitySeconds: number = 300,
   ) {
+    super();
+
     adapter.on('trackEnd', (guildId: string, reason: string) => {
       void this.onTrackEnd(guildId, reason);
     });
@@ -32,6 +35,8 @@ export class LavalinkEventHandler {
     adapter.on('playerClosed', (guildId: string) => {
       this.queueManager.destroy(guildId);
       this.clearInactivityTimer(guildId);
+      // Notificar que el player fue cerrado (para que main.ts limpie GuildStateStore)
+      this.emit('playerClosed', guildId);
     });
   }
 
@@ -46,6 +51,8 @@ export class LavalinkEventHandler {
       try {
         await this.player.play(guildId, nextTrack);
         this.clearInactivityTimer(guildId);
+        // Emitir evento para que main.ts actualice el embed en el canal de Discord
+        this.emit('nowPlaying', guildId, nextTrack);
       } catch (err) {
         this.logger.error('Failed to play next track', err, { guildId });
       }

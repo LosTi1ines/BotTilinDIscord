@@ -8,6 +8,21 @@ export function handleInteractionCreate(
   ctx: BotContext,
   logger: ILogger,
 ): void {
+  // ── Autocompletado ───────────────────────────────────────────
+  // Debe evaluarse ANTES del guard isChatInputCommand()
+  if (interaction.isAutocomplete()) {
+    const command = commands.get(interaction.commandName);
+    if (!command?.autocomplete) return;
+
+    command.autocomplete(interaction, ctx).catch((err: unknown) => {
+      logger.warn('Autocomplete handler failed', { command: interaction.commandName, err });
+      // Intentar responder vacío para que Discord no muestre error de timeout
+      interaction.respond([]).catch(() => { /* ignore */ });
+    });
+    return;
+  }
+
+  // ── Comandos normales de chat ────────────────────────────────
   if (!interaction.isChatInputCommand()) return;
 
   const command = commands.get(interaction.commandName);

@@ -3,10 +3,12 @@ import type { Track } from '../domain/entities/Track.js';
 import type { IMusicPlayerPort } from '../domain/ports/MusicPlayerPort.js';
 import type { IQueueManager } from '../domain/ports/QueueManagerPort.js';
 import type { ILogger } from '../domain/ports/LoggerPort.js';
+import type { GuildStateStore } from '../infrastructure/state/GuildStateStore.js';
 
 export interface PlayTrackInput {
   guildId: string;
   voiceChannelId: string;
+  textChannelId: string;
   query: string;
   requestedBy: string;
 }
@@ -16,6 +18,13 @@ export type PlayTrackResult =
   | { type: 'queued'; track: Track; position: number }
   | { type: 'playlist'; name: string; count: number; first: Track }
   | { type: 'error'; message: string };
+
+export interface AutocompleteTrack {
+  title: string;
+  author: string;
+  uri: string;
+  source: 'youtube' | 'spotify';
+}
 
 function resolveIdentifier(query: string): string {
   if (query.startsWith('http://') || query.startsWith('https://')) return query;
@@ -27,12 +36,16 @@ export class PlayTrackUseCase {
     private readonly player: IMusicPlayerPort,
     private readonly queueManager: IQueueManager,
     private readonly logger: ILogger,
+    private readonly guildStateStore: GuildStateStore,
   ) {}
 
   async execute(input: PlayTrackInput): Promise<PlayTrackResult> {
-    const { guildId, voiceChannelId, query, requestedBy } = input;
+    const { guildId, voiceChannelId, textChannelId, query, requestedBy } = input;
 
     try {
+      // Guardar el canal de texto para poder editar el embed después
+      this.guildStateStore.setTextChannel(guildId, textChannelId);
+
       if (!this.player.hasPlayer(guildId)) {
         await this.player.connect(guildId, voiceChannelId);
       }
@@ -80,5 +93,44 @@ export class PlayTrackUseCase {
       this.logger.error('PlayTrackUseCase failed', err, { guildId, query });
       return { type: 'error', message: 'Ocurrió un error interno al intentar reproducir.' };
     }
+  }
+
+  /**
+   * Búsqueda paralela en YouTube y Spotify para el autocompletado del comando /play.
+   * Devuelve hasta 3 resultados de YouTube y 2 de Spotify (5 en total).
+   */
+  async searchForAutocomplete(query: string): Promise<AutocompleteTrack[]> {
+    if (!query || query.length < 2) return [];
+
+    const [ytResult, spResult] = await Promise.allSettled([
+      this.player.loadTracks(`ytsearch:${query}`),
+      this.player.loadTracks(`spsearch:${query}`),
+    ]);
+
+    const tracks: AutocompleteTrack[] = [];
+
+    if (ytResult.status === 'fulfilled' && ytResult.value.loadType === 'search') {
+      for (const t of ytResult.value.tracks.slice(0, 3)) {
+        tracks.push({
+          title: t.info.title,
+          author: t.info.author,
+          uri: t.info.uri,
+          source: 'youtube',
+        });
+      }
+    }
+
+    if (spResult.status === 'fulfilled' && spResult.value.loadType === 'search') {
+      for (const t of spResult.value.tracks.slice(0, 2)) {
+        tracks.push({
+          title: t.info.title,
+          author: t.info.author,
+          uri: t.info.uri,
+          source: 'spotify',
+        });
+      }
+    }
+
+    return tracks;
   }
 }

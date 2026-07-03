@@ -95,7 +95,18 @@ export class LavalinkAdapter extends EventEmitter implements IMusicPlayerPort {
   // ── IMusicPlayerPort ────────────────────────────────────────
 
   async connect(guildId: string, voiceChannelId: string): Promise<void> {
-    if (this.getPlayer(guildId)) return;
+    const connection = this.shoukaku.connections.get(guildId);
+
+    // Si hay un player en memoria pero sin canal activo (zombie post-disconnect),
+    // destruirlo antes de reconectar para evitar estado inconsistente
+    if (connection?.channelId) return; // ya conectado y activo
+
+    // Destruir player zombie si existe sin conexión activa
+    const existing = this.getPlayer(guildId);
+    if (existing) {
+      await existing.destroy();
+    }
+
     const player = await this.shoukaku.joinVoiceChannel({
       guildId,
       channelId: voiceChannelId,
@@ -184,7 +195,9 @@ export class LavalinkAdapter extends EventEmitter implements IMusicPlayerPort {
   }
 
   hasPlayer(guildId: string): boolean {
-    return this.shoukaku.players.has(guildId);
+    // Verificar tanto el player como la conexión de voz activa en Discord
+    const connection = this.shoukaku.connections.get(guildId);
+    return !!(this.shoukaku.players.has(guildId) && connection?.channelId);
   }
 
   getPosition(guildId: string): number {
