@@ -1,5 +1,5 @@
 {
-  "name": "discord-music-bot",
+  "name": "orpheus",
   "version": "1.0.0",
   "description": "Bot de música privado para Discord con soporte Spotify (ISRC) y YouTube Music vía Lavalink + Shoukaku",
   "main": "dist/main.js",
@@ -12,7 +12,7 @@
     "build": "tsc",
     "start": "node dist/main.js",
     "dev": "tsx watch src/main.ts",
-    "lint": "eslint src/ --ext .ts",
+    "lint": "eslint src",
     "typecheck": "tsc --noEmit",
     "clean": "node -e \"require('fs').rmSync('dist',{recursive:true,force:true})\""
   },
